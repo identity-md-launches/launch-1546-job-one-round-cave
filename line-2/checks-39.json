@@ -1,0 +1,219 @@
+{
+  "checks": [
+    {
+      "command": "python3 -B line-2/tools/handoff-catalog/test_catalog.py",
+      "exit": 0,
+      "output": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.133s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-compare/test_compare.py",
+      "exit": 0,
+      "output": "test_all_four_categories (__main__.Comparisons.test_all_four_categories) ... ok\ntest_budget (__main__.Comparisons.test_budget) ... ok\ntest_cli_changed_payload_exit_two (__main__.Comparisons.test_cli_changed_payload_exit_two) ... ok\ntest_cli_no_report_on_invalid_second_archive (__main__.Comparisons.test_cli_no_report_on_invalid_second_archive) ... ok\ntest_cli_same_payload_exit_zero (__main__.Comparisons.test_cli_same_payload_exit_zero) ... ok\ntest_cli_subprocess (__main__.Comparisons.test_cli_subprocess) ... ok\ntest_deterministic_sorted_report (__main__.Comparisons.test_deterministic_sorted_report) ... ok\ntest_invalid_digest (__main__.Comparisons.test_invalid_digest) ... ok\ntest_real_archive_interoperability (__main__.Comparisons.test_real_archive_interoperability) ... ok\ntest_real_source_demo (__main__.Comparisons.test_real_source_demo) ... ok\ntest_rename_is_remove_add (__main__.Comparisons.test_rename_is_remove_add) ... ok\ntest_same_archive (__main__.Comparisons.test_same_archive) ... ok\ntest_same_payload_different_zip_metadata (__main__.Comparisons.test_same_payload_different_zip_metadata) ... ok\ntest_symlink_refused (__main__.Comparisons.test_symlink_refused) ... ok\ntest_tampering_with_valid_crc_is_rejected (__main__.Comparisons.test_tampering_with_valid_crc_is_rejected) ... ok\ntest_trusted_digest (__main__.Comparisons.test_trusted_digest) ... ok\ntest_unicode_and_empty_files (__main__.Comparisons.test_unicode_and_empty_files) ... ok\ntest_workspace_path_guard (__main__.Comparisons.test_workspace_path_guard) ... ok\ntest_wrong_digest (__main__.Comparisons.test_wrong_digest) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.216s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-content/test_content.py",
+      "exit": 0,
+      "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.189s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-contract/test_contract.py",
+      "exit": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.031s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-dependencies/test_dependencies.py",
+      "exit": 0,
+      "output": "test_bad_graphs (__main__.Dependencies.test_bad_graphs) ... ok\ntest_bad_roots (__main__.Dependencies.test_bad_roots) ... ok\ntest_cli_failure_has_no_receipt_or_output (__main__.Dependencies.test_cli_failure_has_no_receipt_or_output) ... ok\ntest_cli_preview_and_exclusive_output (__main__.Dependencies.test_cli_preview_and_exclusive_output) ... ok\ntest_corrupt_omitted_file_refused (__main__.Dependencies.test_corrupt_omitted_file_refused) ... ok\ntest_cycles_and_self_edge_terminate (__main__.Dependencies.test_cycles_and_self_edge_terminate) ... ok\ntest_declaration_conflicts (__main__.Dependencies.test_declaration_conflicts) ... ok\ntest_deep_graph_no_recursion (__main__.Dependencies.test_deep_graph_no_recursion) ... ok\ntest_graph_and_archive_budgets (__main__.Dependencies.test_graph_and_archive_budgets) ... ok\ntest_multiple_roots_shared_dependency (__main__.Dependencies.test_multiple_roots_shared_dependency) ... ok\ntest_mutable_snapshot_frozen (__main__.Dependencies.test_mutable_snapshot_frozen) ... ok\ntest_order_independent_graph_roots_and_edges (__main__.Dependencies.test_order_independent_graph_roots_and_edges) ... ok\ntest_path_single_read_and_early_declaration_refusal (__main__.Dependencies.test_path_single_read_and_early_declaration_refusal) ... ok\ntest_real_archive_demo_no_write (__main__.Dependencies.test_real_archive_demo_no_write) ... ok\ntest_source_digest_pin (__main__.Dependencies.test_source_digest_pin) ... ok\ntest_transitive_closure_exact_bytes_and_omission (__main__.Dependencies.test_transitive_closure_exact_bytes_and_omission) ... ok\ntest_undeclared_roots_and_dependencies (__main__.Dependencies.test_undeclared_roots_and_dependencies) ... ok\ntest_unselected_declaration_recorded_and_validated (__main__.Dependencies.test_unselected_declaration_recorded_and_validated) ... ok\ntest_workspace_confinement (__main__.Dependencies.test_workspace_confinement) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.160s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-impact/test_impact.py",
+      "exit": 0,
+      "output": "test_additions_are_visible_but_not_inferred (__main__.ImpactTests.test_additions_are_visible_but_not_inferred) ... ok\ntest_baseline_absent_graph_node_refused (__main__.ImpactTests.test_baseline_absent_graph_node_refused) ... ok\ntest_cli_exits (__main__.ImpactTests.test_cli_exits) ... ok\ntest_corrupt_unselected_file_refused (__main__.ImpactTests.test_corrupt_unselected_file_refused) ... ok\ntest_cycle_terminates (__main__.ImpactTests.test_cycle_terminates) ... ok\ntest_deterministic_order_and_root_digest (__main__.ImpactTests.test_deterministic_order_and_root_digest) ... ok\ntest_direct_root_edit (__main__.ImpactTests.test_direct_root_edit) ... ok\ntest_each_file_captured_once (__main__.ImpactTests.test_each_file_captured_once) ... ok\ntest_graph_invalid_shapes_and_paths (__main__.ImpactTests.test_graph_invalid_shapes_and_paths) ... ok\ntest_invalid_graph_before_archive_reads (__main__.ImpactTests.test_invalid_graph_before_archive_reads) ... ok\ntest_json_duplicates_constants_and_size (__main__.ImpactTests.test_json_duplicates_constants_and_size) ... ok\ntest_limits_and_report_budget (__main__.ImpactTests.test_limits_and_report_budget) ... ok\ntest_metadata_only_change (__main__.ImpactTests.test_metadata_only_change) ... ok\ntest_multiple_roots_shared_dependency (__main__.ImpactTests.test_multiple_roots_shared_dependency) ... ok\ntest_outside_closure (__main__.ImpactTests.test_outside_closure) ... ok\ntest_paths_symlinks_fifo_and_traversal (__main__.ImpactTests.test_paths_symlinks_fifo_and_traversal) ... ok\ntest_real_inherited_archive_and_demo (__main__.ImpactTests.test_real_inherited_archive_and_demo) ... ok\ntest_removal_is_diagnostic (__main__.ImpactTests.test_removal_is_diagnostic) ... ok\ntest_removed_root (__main__.ImpactTests.test_removed_root) ... ok\ntest_self_edge (__main__.ImpactTests.test_self_edge) ... ok\ntest_transitive_same_size_edit (__main__.ImpactTests.test_transitive_same_size_edit) ... ok\ntest_trusted_digest (__main__.ImpactTests.test_trusted_digest) ... ok\ntest_unchanged (__main__.ImpactTests.test_unchanged) ... ok\ntest_undeclared_leaf_refused (__main__.ImpactTests.test_undeclared_leaf_refused) ... ok\ntest_witness_diamond_tie (__main__.ImpactTests.test_witness_diamond_tie) ... ok\ntest_witness_prefers_shortest_route (__main__.ImpactTests.test_witness_prefers_shortest_route) ... ok\ntest_witness_self_and_cycle (__main__.ImpactTests.test_witness_self_and_cycle) ... ok\ntest_witness_shared_dependency_and_unchanged (__main__.ImpactTests.test_witness_shared_dependency_and_unchanged) ... ok\ntest_witness_transitive_and_removed (__main__.ImpactTests.test_witness_transitive_and_removed) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.085s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-inspect/test_inspect.py",
+      "exit": 0,
+      "output": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.038s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-landing/test_landing.py",
+      "exit": 0,
+      "output": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.054s\n\nOK\n{\n  \"archive_sha256\": \"aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb\",\n  \"destination\": \"test/scratch/line2-landing-tests/received\",\n  \"existing_name_profile\": \"NFC-casefold-trim-space-dot-v1\",\n  \"file_count\": 2,\n  \"format\": \"handoff-landing-v2\",\n  \"name_scan_limits\": {\n    \"per_directory\": 4096,\n    \"total\": 20000\n  },\n  \"names_scanned\": 21,\n  \"note\": \"Read-only preflight of named workspace paths at one instant; no extraction, atomic reservation, sender authentication or payload safety claim. Existing names use a conservative NFC/casefold/trailing-space-dot screen, not every filesystem's equivalence rules. Safe scans require POSIX dir_fd support.\",\n  \"path_issues\": [\n    {\n      \"blocking_path\": \"test/scratch/line2-landing-tests/received/readme.MD\",\n      \"kind\": \"existing-name-collision\",\n      \"path\": \"README.md\"\n    }\n  ],\n  \"portability_issues\": [],\n  \"portability_profile\": \"conservative-filenames-v2\",\n  \"ready\": false,\n  \"trusted_digest_matched\": false\n}\n{\n  \"archive_sha256\": \"aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb\",\n  \"destination\": \"test/scratch/line2-landing-tests/received\",\n  \"existing_name_profile\": \"NFC-casefold-trim-space-dot-v1\",\n  \"file_count\": 2,\n  \"format\": \"handoff-landing-v2\",\n  \"name_scan_limits\": {\n    \"per_directory\": 4096,\n    \"total\": 20000\n  },\n  \"names_scanned\": 19,\n  \"note\": \"Read-only preflight of named workspace paths at one instant; no extraction, atomic reservation, sender authentication or payload safety claim. Existing names use a conservative NFC/casefold/trailing-space-dot screen, not every filesystem's equivalence rules. Safe scans require POSIX dir_fd support.\",\n  \"path_issues\": [],\n  \"portability_issues\": [],\n  \"portability_profile\": \"conservative-filenames-v2\",\n  \"ready\": true,\n  \"trusted_digest_matched\": false\n}\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-portability/test_portability.py",
+      "exit": 0,
+      "output": ".......................\n----------------------------------------------------------------------\nRan 23 tests in 0.098s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-reproduce/test_reproduce.py",
+      "exit": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.573s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-review/test_review.py",
+      "exit": 0,
+      "output": ".................................\n----------------------------------------------------------------------\nRan 33 tests in 1.979s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-source/test_source.py",
+      "exit": 0,
+      "output": ".....................\n----------------------------------------------------------------------\nRan 21 tests in 0.109s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-subset/test_subset.py",
+      "exit": 0,
+      "output": "test_all_files_reproduce_original (__main__.Subsets.test_all_files_reproduce_original) ... ok\ntest_bad_selections (__main__.Subsets.test_bad_selections) ... ok\ntest_cli_output_and_no_overwrite_or_extraction (__main__.Subsets.test_cli_output_and_no_overwrite_or_extraction) ... ok\ntest_cli_real_no_write (__main__.Subsets.test_cli_real_no_write) ... ok\ntest_exact_subset_and_own_manifest (__main__.Subsets.test_exact_subset_and_own_manifest) ... ok\ntest_input_budgets (__main__.Subsets.test_input_budgets) ... ok\ntest_invalid_input_no_output (__main__.Subsets.test_invalid_input_no_output) ... ok\ntest_mutable_input_frozen (__main__.Subsets.test_mutable_input_frozen) ... ok\ntest_order_independent (__main__.Subsets.test_order_independent) ... ok\ntest_path_confinement (__main__.Subsets.test_path_confinement) ... ok\ntest_real_archive (__main__.Subsets.test_real_archive) ... ok\ntest_symlink_output_refused (__main__.Subsets.test_symlink_output_refused) ... ok\ntest_tampered_omitted_file_refused (__main__.Subsets.test_tampered_omitted_file_refused) ... ok\ntest_trusted_digest (__main__.Subsets.test_trusted_digest) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.135s\n\nOK\n"
+    }
+  ],
+  "runtime": "Python 3.12.3",
+  "python310": "Not installed; fixture repair reviewed but not run on 3.10",
+  "demo": {
+    "affected_declared_paths": [
+      "README.md",
+      "handoff.py"
+    ],
+    "affected_roots": [
+      "README.md"
+    ],
+    "changed_outside_closure": [],
+    "closure_paths": [
+      "README.md",
+      "handoff.py"
+    ],
+    "comparison": {
+      "added": [],
+      "after": {
+        "archive_bytes": 13238,
+        "archive_sha256": "94e3c46f1ace556f4bab55a3985fc9402dabe32afc931ccd8b5a8f0da31415ed",
+        "file_count": 2,
+        "payload_bytes": 12660,
+        "trusted_digest_matched": false
+      },
+      "before": {
+        "archive_bytes": 13181,
+        "archive_sha256": "aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb",
+        "file_count": 2,
+        "payload_bytes": 12603,
+        "trusted_digest_matched": false
+      },
+      "counts": {
+        "added": 0,
+        "modified": 1,
+        "removed": 0,
+        "unchanged": 1
+      },
+      "format": "handoff-comparison-v1",
+      "modified": [
+        {
+          "after": {
+            "bytes": 9880,
+            "sha256": "21cc11704fe8066d247466ba0c471206fee8d3d189491c4104302ab48565cf23"
+          },
+          "before": {
+            "bytes": 9823,
+            "sha256": "0b3878b76c13a18951601aef2ec48daf8c56fbb195fea953be797a7f1d8df97d"
+          },
+          "path": "handoff.py"
+        }
+      ],
+      "note": "Integrity is not authenticity without independently trusted archive hashes. Renames are reported as removal plus addition; payload code is never executed.",
+      "payload_byte_delta": 57,
+      "removed": [],
+      "same_archive": false,
+      "same_payload": false,
+      "unchanged": [
+        "README.md"
+      ],
+      "verified": true
+    },
+    "demo": "real inherited archive versus an explicitly hypothetical in-memory code edit",
+    "direct_modified_paths": [
+      "handoff.py"
+    ],
+    "format": "handoff-impact-v1",
+    "graph_digest_encoding": "ASCII JSON, sorted keys and lists, compact separators, no newline",
+    "graph_edge_count": 1,
+    "graph_node_count": 2,
+    "graph_sha256": "de2d40eb22c3920fcab0014d03d1b60e0bc66fa95c85c93224b2e190e0bebdcb",
+    "impact_witnesses": [
+      {
+        "root": "README.md",
+        "route": [
+          "README.md",
+          "handoff.py"
+        ]
+      }
+    ],
+    "missing_dependency_paths": [],
+    "note": "Impact means a baseline root reaches a changed or removed file through caller declarations, including its own bytes. Added files and changes outside that closure do not affect these baseline roots. No new-revision dependency inference, payload execution, authorship proof or software-behavior claim is made.",
+    "requires_review": true,
+    "roots": [
+      "README.md"
+    ],
+    "unaffected_roots": [],
+    "verified": true
+  },
+  "unchanged_check": {
+    "affected_declared_paths": [],
+    "affected_roots": [],
+    "changed_outside_closure": [],
+    "closure_paths": [
+      "README.md",
+      "handoff.py"
+    ],
+    "comparison": {
+      "added": [],
+      "after": {
+        "archive_bytes": 13181,
+        "archive_sha256": "aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb",
+        "file_count": 2,
+        "payload_bytes": 12603,
+        "trusted_digest_matched": false
+      },
+      "before": {
+        "archive_bytes": 13181,
+        "archive_sha256": "aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb",
+        "file_count": 2,
+        "payload_bytes": 12603,
+        "trusted_digest_matched": false
+      },
+      "counts": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0,
+        "unchanged": 2
+      },
+      "format": "handoff-comparison-v1",
+      "modified": [],
+      "note": "Integrity is not authenticity without independently trusted archive hashes. Renames are reported as removal plus addition; payload code is never executed.",
+      "payload_byte_delta": 0,
+      "removed": [],
+      "same_archive": true,
+      "same_payload": true,
+      "unchanged": [
+        "README.md",
+        "handoff.py"
+      ],
+      "verified": true
+    },
+    "direct_modified_paths": [],
+    "format": "handoff-impact-v1",
+    "graph_digest_encoding": "ASCII JSON, sorted keys and lists, compact separators, no newline",
+    "graph_edge_count": 1,
+    "graph_node_count": 2,
+    "graph_sha256": "de2d40eb22c3920fcab0014d03d1b60e0bc66fa95c85c93224b2e190e0bebdcb",
+    "impact_witnesses": [],
+    "missing_dependency_paths": [],
+    "note": "Impact means a baseline root reaches a changed or removed file through caller declarations, including its own bytes. Added files and changes outside that closure do not affect these baseline roots. No new-revision dependency inference, payload execution, authorship proof or software-behavior claim is made.",
+    "requires_review": false,
+    "roots": [
+      "README.md"
+    ],
+    "unaffected_roots": [
+      "README.md"
+    ],
+    "verified": true
+  },
+  "test_count": 228
+}

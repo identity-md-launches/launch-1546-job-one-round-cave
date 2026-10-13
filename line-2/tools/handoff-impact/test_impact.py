@@ -25,7 +25,7 @@ class ImpactTests(unittest.TestCase):
                          'dependencies': {'root': ['mid'], 'mid': ['leaf'],
                                           'leaf': [], 'other': []}}
         Path('test/scratch').mkdir(parents=True, exist_ok=True)
-        self.temp = tempfile.TemporaryDirectory(dir='test/scratch')
+        self.temp = tempfile.TemporaryDirectory(dir=str(Path('test/scratch').absolute()))
         self.addCleanup(self.temp.cleanup)
         self.folder = Path(self.temp.name).relative_to(Path.cwd())
 
@@ -48,6 +48,43 @@ class ImpactTests(unittest.TestCase):
     def test_direct_root_edit(self):
         report = self.analyze(self.changed(root=b'ROOT'))
         self.assertEqual(report['affected_declared_paths'], ['root'])
+
+    def test_witness_transitive_and_removed(self):
+        expected = [{'root': 'root', 'route': ['root', 'mid', 'leaf']}]
+        self.assertEqual(self.analyze(self.changed(leaf=b'x'))['impact_witnesses'], expected)
+        files = dict(self.files)
+        del files['leaf']
+        self.assertEqual(self.analyze(files)['impact_witnesses'], expected)
+
+    def test_witness_prefers_shortest_route(self):
+        self.document['dependencies']['root'] = ['mid', 'leaf']
+        report = self.analyze(self.changed(leaf=b'x', mid=b'x'))
+        self.assertEqual(report['impact_witnesses'],
+                         [{'root': 'root', 'route': ['root', 'leaf']}])
+
+    def test_witness_self_and_cycle(self):
+        self.document['dependencies']['leaf'] = ['root']
+        report = self.analyze(self.changed(root=b'x'))
+        self.assertEqual(report['impact_witnesses'], [{'root': 'root', 'route': ['root']}])
+        report = self.analyze(self.changed(leaf=b'x'))
+        self.assertEqual(report['impact_witnesses'][0]['route'], ['root', 'mid', 'leaf'])
+
+    def test_witness_shared_dependency_and_unchanged(self):
+        self.document['dependencies']['other'] = ['leaf']
+        report = self.analyze(self.changed(leaf=b'x'))
+        self.assertEqual(report['impact_witnesses'], [
+            {'root': 'other', 'route': ['other', 'leaf']},
+            {'root': 'root', 'route': ['root', 'mid', 'leaf']}])
+        self.assertEqual(self.analyze()['impact_witnesses'], [])
+
+    def test_witness_diamond_tie(self):
+        self.document['roots'] = ['root']
+        self.document['dependencies']['root'] = ['other', 'mid']
+        self.document['dependencies']['other'] = ['leaf']
+        expected = [{'root': 'root', 'route': ['root', 'mid', 'leaf']}]
+        self.assertEqual(self.analyze(self.changed(leaf=b'x'))['impact_witnesses'], expected)
+        self.document['dependencies']['root'].reverse()
+        self.assertEqual(self.analyze(self.changed(leaf=b'x'))['impact_witnesses'], expected)
 
     def test_removal_is_diagnostic(self):
         files = dict(self.files)

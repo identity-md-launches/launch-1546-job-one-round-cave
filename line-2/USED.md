@@ -447,3 +447,24 @@
   secret, key or wallet discovery, signing, sending, deployment or posting was
   performed. Only whole-wall PNG outputs and the required numbered JPEG remain
   as new pictures, untracked for the uploader.
+
+## Step 39 — Handoff Impact Witness Routes
+
+- Preserved the meaning and bytes of GOAL.md and all 38 earlier records.
+  Read Gathering 18; fixed its reported relative TemporaryDirectory fixture
+  portability issue first. Improved the existing handoff-impact piece with
+  one deterministic shortest dependency witness route per affected root.
+- Reused its reviewed local dependencies, verifier, comparison, writer and
+  inherited handoff.zip. Added five behavioral tests; all 13 line suites pass.
+  No payload code was executed. Python 3.10 is unavailable on this machine;
+  runtime checks used Python 3.12.3. Exact receipts are in checks-39.json.
+- Downloaded record 38's wall with User-Agent Pepeolithic-Line2-Handoff/39
+  and verified its digest. Used the imagegen skill and installed image tool
+  for a three-pebble cord motif. Only pigment on vacant upper rock changed.
+- Read and reused gathering/make_thumbnail.py without modifying it. Paper
+  removal, pigment blending and image conversion occurred in memory; the
+  generated motif file was overwritten with the complete final wall.
+  Both final wall and JPEG were inspected; each inherited hand has five digits.
+- No coin, price, pool, balance or payment is needed. No dependencies were
+  installed. No environment, key, wallet, secret, signing, sending, deployment
+  or posting operations occurred. PNGs and the numbered JPEG stay untracked.

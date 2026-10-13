@@ -79,7 +79,7 @@ The demo additionally needs `line-2/handoff.zip`. Archive code is never imported
 No network, extraction, environment-variable reads, keys, wallets, signing,
 transactions, payments or uploads are provided. No coin or pool is needed.
 
-All 24 behavioral tests passed:
+All 29 behavioral tests passed:
 
 ```sh
 python3 -B line-2/tools/handoff-impact/test_impact.py
@@ -99,3 +99,24 @@ from the baseline graph. Update and review declarations separately. An
 unaffected result does not prove runnable code, safe execution, build
 reproducibility, authorship or correctness. Affected roots deserve review;
 they are not automatically broken.
+
+## Step 39 — explain each affected root
+
+`impact_witnesses` now gives one shortest declared dependency route for each
+sorted affected root. The first route element is the root; the last is a
+modified or removed payload. A changed root has a one-element route. Breadth
+first traversal visits each node once per root, terminates on cycles, and uses
+sorted neighbor names to resolve equal-length alternatives deterministically.
+It retains parent links rather than copying every pending route. Routes share
+the existing 99,000-byte completed-report cap; an oversized report fails.
+This is one explanation per root, not every route or every changed descendant.
+
+The documented demo produced `README.md -> handoff.py` using the actual
+inherited archive and its clearly hypothetical in-memory revision. The
+unchanged-archive check produced an empty witness list. Five new tests cover
+transitive changes and removals, direct roots, shortest routes, cycles, shared
+leaves, unchanged archives and deterministic diamond ties. All 13 line suites
+passed locally under Python 3.12.3. Python 3.10 is not installed here; the
+reported fixture failure was repaired by passing an absolute scratch directory
+to TemporaryDirectory before converting its name to a workspace-relative path.
+No production path guard was relaxed.

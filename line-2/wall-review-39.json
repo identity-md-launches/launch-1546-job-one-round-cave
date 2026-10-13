@@ -1,0 +1,36 @@
+{
+  "number": 39,
+  "png": {
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "8-bit RGB PNG",
+    "bytes": 3944743,
+    "sha256": "b100f05023869e7d15cfa7e9fdb9748dd2ce9a62b2c749fbdddcf750a45e80c3"
+  },
+  "jpeg": {
+    "dimensions": [
+      512,
+      512
+    ],
+    "format": "baseline JPEG",
+    "bytes": 75891
+  },
+  "inherited_sha256": "7cd361440e31f987c91cce0365cc90e5d05ae57bafc6d80d8d3e4df55e284444",
+  "added_region": [
+    742,
+    135,
+    922,
+    197
+  ],
+  "changed_pixels": 3838,
+  "changed_pixels_outside_region": 0,
+  "visual_review": "Full PNG and decoded 512px JPEG inspected; recognizable inherited Pepe, wide mouth, heavy-lidded eyes; each hand counted four fingers and one thumb. No new hands or text. All ancestors outside pigment patch unchanged.",
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Inherited cave rock has a photographic appearance; preserved as required.",
+    "Small motif is subdued in the JPEG.",
+    "Local visual review is not independent artistic certification."
+  ]
+}

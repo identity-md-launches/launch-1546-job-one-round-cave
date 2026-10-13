@@ -1,0 +1,30 @@
+{
+  "name": "The Traceable Cord",
+  "image": "https://api.imd.fun/artifacts/b100f05023869e7d15cfa7e9fdb9748dd2ce9a62b2c749fbdddcf750a45e80c3",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 2"
+    },
+    {
+      "trait_type": "Number",
+      "value": 39
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "handoff-impact"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A cord traces the shortest route to the stone that changed."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "reproducible offline-verifiable worker handoffs"
+    }
+  ]
+}

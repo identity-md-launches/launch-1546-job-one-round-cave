@@ -9,6 +9,7 @@ import sys
 import zipfile
 from pathlib import Path
 import importlib.util
+from collections import deque
 
 
 def load(name, relative):
@@ -28,6 +29,24 @@ DEP = load('impact_dependencies', 'line-2/tools/handoff-dependencies/dependencie
 COMPARE = load('impact_compare', 'line-2/tools/handoff-compare/compare_handoff.py')
 INSPECT, WRITER = DEP.INSPECT, DEP.WRITER
 MAX_REPORT_BYTES = 99000
+
+
+def witness(graph, root, changed):
+    """One shortest declared route; sorted neighbors break ties deterministically."""
+    parents, pending = {root: None}, deque([root])
+    while pending:
+        path = pending.popleft()
+        if path in changed:
+            route = []
+            while path is not None:
+                route.append(path)
+                path = parents[path]
+            return list(reversed(route))
+        for dependency in sorted(graph[path]):
+            if dependency not in parents:
+                parents[dependency] = path
+                pending.append(dependency)
+    raise ValueError('affected root has no declared change route')
 
 
 def normalize(document, limits):
@@ -99,6 +118,9 @@ def analyze_bytes(before, after, document, before_sha256=None, after_sha256=None
         'graph_node_count': len(graph), 'graph_edge_count': sum(map(len, graph.values())),
         'roots': roots, 'closure_paths': sorted(closure),
         'affected_roots': affected_roots,
+        'impact_witnesses': [
+            {'root': root, 'route': witness(graph, root, changed)}
+            for root in affected_roots],
         'unaffected_roots': sorted(set(roots) - impacted),
         'affected_declared_paths': sorted(impacted),
         'direct_modified_paths': sorted(modified & closure),

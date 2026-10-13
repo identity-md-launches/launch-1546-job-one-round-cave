@@ -1,0 +1,12 @@
+{
+  "goal_bytes_unchanged": true,
+  "older_records_unchanged": true,
+  "numbered_records": 39,
+  "allowed_paths_only": true,
+  "new_non_artifact_files_below_100KB": true,
+  "pngs_identical": true,
+  "png_sha256": "b100f05023869e7d15cfa7e9fdb9748dd2ce9a62b2c749fbdddcf750a45e80c3",
+  "suites_passed": 13,
+  "tests_passed": 228,
+  "outputs_left_untracked": true
+}
