@@ -1,0 +1,12 @@
+{
+  "keys_wallets_signing_or_submission": false,
+  "methods": [
+    "eth_chainId",
+    "eth_getBlockByNumber",
+    "eth_call",
+    "eth_getProof"
+  ],
+  "network": "Ethereum mainnet",
+  "public_source_alias": "https://ethereum-rpc.publicnode.com",
+  "transport": "Assigned contributor relay; alias is supplied by the task and does not authenticate the upstream provider."
+}

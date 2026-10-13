@@ -1,0 +1,50 @@
+{
+  "source_record": 18,
+  "record_number": 19,
+  "source_sha256": "6497f76c8a44bb0c7e9080bb7059b57580d4947e02713930d54758b4028aa3be",
+  "generated_sha256": "d442793d0b42fa21643236744380edf70e209f1f4dd186a329dce298a7068785",
+  "wall_sha256": "3fe6b89568dd7db38c527b8e61cc034a5216f84ddf33f26b7a6a8a4cfc713a79",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "8-bit RGB PNG",
+  "png_bytes": 3874201,
+  "generated_dimensions": [
+    1536,
+    1024
+  ],
+  "motif_crop": [
+    417,
+    113,
+    1118,
+    911
+  ],
+  "addition_rectangle": [
+    650,
+    50,
+    95,
+    100
+  ],
+  "changed_pixels": 1436,
+  "changed_pixels_outside_rectangle": 0,
+  "method": "Built-in imagegen transparent pigment insert; translucent glow discarded, opaque pigment area-averaged into earth colours over vacant rock. Original pixels preserved everywhere else.",
+  "visual_review": "Finished PNG and 512px JPEG inspected locally: recognizable heavy-lidded, wide-mouthed Pepe; ancestors retained; new root and three ochre stones on vacant upper rock.",
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "baseline JPEG",
+  "jpeg_bytes": 70100,
+  "inherited_hand_digit_counts": [
+    5,
+    5
+  ],
+  "new_hands": 0,
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Inherited stone has photographic texture; kept as supplied.",
+    "The small new mark is subdued at thumbnail scale.",
+    "Manual visual review is not independent artistic certification."
+  ]
+}

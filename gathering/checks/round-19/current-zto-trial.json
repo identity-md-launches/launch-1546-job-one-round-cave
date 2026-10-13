@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-4/tools/erc20-transfer-window/transfer_window.py",
+    "--rpc",
+    "http://127.0.0.1:39931/rpc/1",
+    "--latest-window",
+    "2"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"captured_at\": \"2026-10-13T09:38:46Z\",\n  \"chain_id\": 1,\n  \"decimals\": 18,\n  \"decimals_block\": 26182723,\n  \"duplicate_count\": 0,\n  \"from_block\": 26182722,\n  \"from_block_anchor\": {\n    \"hash\": \"0xbf45624a6e4f421cfc44a0b0e034b95d297bf77b7ae4c4120ca10e66a70106fb\",\n    \"number\": 26182722\n  },\n  \"head_at_capture\": 26182723,\n  \"limitations\": \"Single-provider observation; not a completeness or finality proof. Interior block hashes are retained but not independently verified.\",\n  \"provider_result\": \"validated\",\n  \"raw_logs\": [],\n  \"read_only\": true,\n  \"rpc\": \"http://127.0.0.1:39931/rpc/1\",\n  \"schema_version\": 3,\n  \"to_block\": 26182723,\n  \"to_block_anchor\": {\n    \"hash\": \"0xd233817472572061eb5979358640d1408041dd8bfcb1df17d56d80e5d45f8e0c\",\n    \"number\": 26182723\n  },\n  \"token\": \"ZTO\",\n  \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n  \"transfer_count\": 0,\n  \"transfers\": []\n}\n",
+  "stderr": "",
+  "checked_at": "2026-10-13T09:38:46.758370+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_below_latest (test_nonce_context.Checks.test_below_latest) ... ok\ntest_cli_invalid_no_partial_report (test_nonce_context.Checks.test_cli_invalid_no_partial_report) ... ok\ntest_demo_real_destination (test_nonce_context.Checks.test_demo_real_destination) ... ok\ntest_empty_window (test_nonce_context.Checks.test_empty_window) ... ok\ntest_frontier (test_nonce_context.Checks.test_frontier) ... ok\ntest_gap_exact (test_nonce_context.Checks.test_gap_exact) ... ok\ntest_hex_spelling_same_fingerprint (test_nonce_context.Checks.test_hex_spelling_same_fingerprint) ... ok\ntest_inconsistent_context (test_nonce_context.Checks.test_inconsistent_context) ... ok\ntest_invalid_counts (test_nonce_context.Checks.test_invalid_counts) ... ok\ntest_large_exact_integers (test_nonce_context.Checks.test_large_exact_integers) ... ok\ntest_oversized_proposal_nonce (test_nonce_context.Checks.test_oversized_proposal_nonce) ... ok\ntest_pending_boundaries (test_nonce_context.Checks.test_pending_boundaries) ... ok\ntest_reject_malformed_or_signed (test_nonce_context.Checks.test_reject_malformed_or_signed) ... ok\ntest_stdin_bound_before_strip (test_nonce_context.Checks.test_stdin_bound_before_strip) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.012s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-3/tools/nonce-context",
+    "-p",
+    "test_nonce_context.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 14,
+  "checked_at": "2026-10-13T09:36:01.570010+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

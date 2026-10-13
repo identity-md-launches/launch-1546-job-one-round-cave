@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_directory_refused (test_companions.CompanionBoundaryTests.test_directory_refused) ... ok\ntest_directory_symlink_refused (test_companions.CompanionBoundaryTests.test_directory_symlink_refused) ... ok\ntest_duplicate_json_keys_refused (test_companions.CompanionBoundaryTests.test_duplicate_json_keys_refused) ... ok\ntest_excessive_nesting_refused (test_companions.CompanionBoundaryTests.test_excessive_nesting_refused) ... ok\ntest_fifo_refused_without_waiting_for_writer (test_companions.CompanionBoundaryTests.test_fifo_refused_without_waiting_for_writer) ... ok\ntest_final_symlink_refused_even_inside_workspace (test_companions.CompanionBoundaryTests.test_final_symlink_refused_even_inside_workspace) ... ok\ntest_invalid_utf8_refused (test_companions.CompanionBoundaryTests.test_invalid_utf8_refused) ... ok\ntest_nonfinite_and_overflow_json_refused (test_companions.CompanionBoundaryTests.test_nonfinite_and_overflow_json_refused) ... ok\ntest_outside_workspace_refused (test_companions.CompanionBoundaryTests.test_outside_workspace_refused) ... ok\ntest_oversized_file_refused_before_decode (test_companions.CompanionBoundaryTests.test_oversized_file_refused_before_decode) ... ok\ntest_real_zto_capture_through_every_cli (test_companions.CompanionBoundaryTests.test_real_zto_capture_through_every_cli) ... ok\ntest_traversal_refused_without_resolving_to_valid_file (test_companions.CompanionBoundaryTests.test_traversal_refused_without_resolving_to_valid_file) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.925s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-4/tools/bounded-capture-reader",
+    "-p",
+    "test_companions.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 12,
+  "checked_at": "2026-10-13T09:36:03.759217+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

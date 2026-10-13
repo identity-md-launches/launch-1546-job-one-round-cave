@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_changed_and_unavailable_counts_both_survive (test_audit.AuditTests.test_changed_and_unavailable_counts_both_survive) ... ok\ntest_changed_hash_is_not_a_match (test_audit.AuditTests.test_changed_hash_is_not_a_match) ... ok\ntest_cli_demo_and_mismatch_exit_codes (test_audit.AuditTests.test_cli_demo_and_mismatch_exit_codes) ... ok\ntest_demo_disallows_network_options (test_audit.AuditTests.test_demo_disallows_network_options) ... usage: python3 -m unittest [-h] (--demo | --capture CAPTURE)\n                           [--live | --evidence EVIDENCE] [--rpc RPC]\npython3 -m unittest: error: --demo uses its retained capture and observations only\nok\ntest_empty_capture_still_checks_boundaries (test_audit.AuditTests.test_empty_capture_still_checks_boundaries) ... ok\ntest_exact_types_and_timezone_required (test_audit.AuditTests.test_exact_types_and_timezone_required) ... ok\ntest_forged_summary_is_refused_before_io (test_audit.AuditTests.test_forged_summary_is_refused_before_io) ... ok\ntest_imd_supported_without_inventing_live_evidence (test_audit.AuditTests.test_imd_supported_without_inventing_live_evidence) ... ok\ntest_interior_event_block_is_checked_too (test_audit.AuditTests.test_interior_event_block_is_checked_too) ... ok\ntest_live_reads_only_chain_and_distinct_numbered_headers (test_audit.AuditTests.test_live_reads_only_chain_and_distinct_numbered_headers) ... ok\ntest_malformed_block_refused (test_audit.AuditTests.test_malformed_block_refused) ... ok\ntest_missing_duplicate_extra_and_reordered_evidence_refused (test_audit.AuditTests.test_missing_duplicate_extra_and_reordered_evidence_refused) ... ok\ntest_network_error_propagates_without_retry (test_audit.AuditTests.test_network_error_propagates_without_retry) ... ok\ntest_over_budget_is_refused_before_io (test_audit.AuditTests.test_over_budget_is_refused_before_io) ... ok\ntest_retained_real_live_observation (test_audit.AuditTests.test_retained_real_live_observation) ... ok\ntest_single_block_is_queried_once (test_audit.AuditTests.test_single_block_is_queried_once) ... ok\ntest_unavailable_is_not_empty_or_matching (test_audit.AuditTests.test_unavailable_is_not_empty_or_matching) ... ok\ntest_wrong_chain_stops_before_block_reads (test_audit.AuditTests.test_wrong_chain_stops_before_block_reads) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.108s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-4/tools/transfer-anchor-audit",
+    "-p",
+    "test_audit.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 18,
+  "checked_at": "2026-10-13T09:36:04.423348+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "line_files_unchanged": 447,
+  "records": 177,
+  "line_suites": 58,
+  "line_tests_attempted": 779,
+  "native_test_limitations": [],
+  "offline_commands": 57,
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "8-bit RGB PNG",
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "baseline JPEG",
+  "wall_sha256": "3fe6b89568dd7db38c527b8e61cc034a5216f84ddf33f26b7a6a8a4cfc713a79",
+  "unmet_visual_requirements": [],
+  "shared_integration_tests": 13,
+  "review_limit": "Structural checks plus recorded local visual review; not artistic certification."
+}

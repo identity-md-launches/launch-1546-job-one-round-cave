@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_consecutive_parent_link_conflict (test_snapshot_timeline.TimelineTests.test_consecutive_parent_link_conflict) ... ok\ntest_demo_command (test_snapshot_timeline.TimelineTests.test_demo_command) ... ok\ntest_different_hash_at_same_height (test_snapshot_timeline.TimelineTests.test_different_hash_at_same_height) ... ok\ntest_duplicate_keys_rejected (test_snapshot_timeline.TimelineTests.test_duplicate_keys_rejected) ... ok\ntest_limits (test_snapshot_timeline.TimelineTests.test_limits) ... ok\ntest_modified_result_without_matching_after_rejected (test_snapshot_timeline.TimelineTests.test_modified_result_without_matching_after_rejected) ... ok\ntest_real_observations_offline (test_snapshot_timeline.TimelineTests.test_real_observations_offline) ... ok\ntest_same_hash_different_header (test_snapshot_timeline.TimelineTests.test_same_hash_different_header) ... ok\ntest_supply_conflict_at_same_hash (test_snapshot_timeline.TimelineTests.test_supply_conflict_at_same_hash) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.004s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-1/tools/snapshot-timeline",
+    "-p",
+    "test_snapshot_timeline.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 9,
+  "checked_at": "2026-10-13T09:35:59.387259+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

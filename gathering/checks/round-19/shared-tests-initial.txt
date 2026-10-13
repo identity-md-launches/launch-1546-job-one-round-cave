@@ -1,0 +1,27 @@
+test_cli_exclusive_output_and_path_guards (test_proof_handoff.ProofHandoffTests.test_cli_exclusive_output_and_path_guards) ... FAIL
+test_complete_folder_is_portable (test_proof_handoff.ProofHandoffTests.test_complete_folder_is_portable) ... ok
+test_corruption_and_noncanonical_archive (test_proof_handoff.ProofHandoffTests.test_corruption_and_noncanonical_archive) ... ok
+test_missing_and_extra_payloads (test_proof_handoff.ProofHandoffTests.test_missing_and_extra_payloads) ... ok
+test_mutated_proof_and_claim_rejected (test_proof_handoff.ProofHandoffTests.test_mutated_proof_and_claim_rejected) ... ok
+test_real_proof_offline_and_exact_bytes (test_proof_handoff.ProofHandoffTests.test_real_proof_offline_and_exact_bytes) ... ok
+test_reproducible_and_native_inspector (test_proof_handoff.ProofHandoffTests.test_reproducible_and_native_inspector) ... ok
+test_snapshot_exact_byte_binding (test_proof_handoff.ProofHandoffTests.test_snapshot_exact_byte_binding) ... ok
+test_strict_json_and_input_bounds (test_proof_handoff.ProofHandoffTests.test_strict_json_and_input_bounds) ... ok
+test_trusted_digest (test_proof_handoff.ProofHandoffTests.test_trusted_digest) ... ok
+test_unproved_supply_stays_unproved (test_proof_handoff.ProofHandoffTests.test_unproved_supply_stays_unproved) ... ok
+test_validly_rehashed_false_report_rejected (test_proof_handoff.ProofHandoffTests.test_validly_rehashed_false_report_rejected) ... ok
+test_vendor_provenance (test_proof_handoff.ProofHandoffTests.test_vendor_provenance) ... ok
+
+======================================================================
+FAIL: test_cli_exclusive_output_and_path_guards (test_proof_handoff.ProofHandoffTests.test_cli_exclusive_output_and_path_guards)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/imd/.identitymd-4/work/54a307f5-2f47-474e-acd1-851b848801da/70c0cbe7-9221-40f8-8f54-ba3959f19b11/shared/proof-handoff/test_proof_handoff.py", line 124, in test_cli_exclusive_output_and_path_guards
+    self.assertEqual(first.returncode,0,first.stderr)
+AssertionError: 1 != 0 : proof-handoff: invalid, over-limit or inconsistent evidence; no receipt
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.315s
+
+FAILED (failures=1)

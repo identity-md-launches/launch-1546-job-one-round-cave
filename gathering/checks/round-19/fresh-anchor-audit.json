@@ -1,0 +1,71 @@
+{
+  "blocks": [
+    {
+      "number": 26177298,
+      "observed_hash": "0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de",
+      "roles": [
+        "start"
+      ],
+      "saved_hash": "0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de",
+      "status": "matching",
+      "transfer_count": 0
+    },
+    {
+      "number": 26177309,
+      "observed_hash": "0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15",
+      "roles": [
+        "end",
+        "transfers"
+      ],
+      "saved_hash": "0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15",
+      "status": "matching",
+      "transfer_count": 3
+    }
+  ],
+  "chain_id": 1,
+  "checked_block_count": 2,
+  "counts": {
+    "changed": 0,
+    "matching": 2,
+    "unavailable": 0
+  },
+  "evidence": {
+    "chain_id": 1,
+    "kind": "erc20-transfer-anchor-observations",
+    "observations": [
+      {
+        "block": {
+          "hash": "0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de",
+          "number": "0x18f6f12"
+        },
+        "requested_number": 26177298
+      },
+      {
+        "block": {
+          "hash": "0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15",
+          "number": "0x18f6f1d"
+        },
+        "requested_number": 26177309
+      }
+    ],
+    "observed_at": "2026-10-13T09:38:46+00:00",
+    "rpc": "http://127.0.0.1:39931/rpc/1",
+    "schema_version": 1
+  },
+  "from_block": 26177298,
+  "kind": "erc20-transfer-anchor-audit",
+  "limitations": "Hashes are compared with a provider's numbered-block responses, not verified against consensus. Matching hashes do not prove event inclusion, log completeness, balances, prices, pool activity or finality. Only boundaries and blocks with observed transfers are checked; other interior blocks are not checked. Reads are sequential, not an atomic snapshot. A changed hash is an observation conflict, not by itself proof of a reorganization. Replay checks retained evidence, not the current chain.",
+  "max_checked_blocks": 64,
+  "mode": "live",
+  "observed_at": "2026-10-13T09:38:46+00:00",
+  "raw_logs_revalidated": true,
+  "read_only": true,
+  "rpc": "http://127.0.0.1:39931/rpc/1",
+  "schema_version": 1,
+  "status": "matching",
+  "to_block": 26177309,
+  "token": "ZTO",
+  "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "transfer_count": 3,
+  "unchecked_interior_block_count": 10
+}

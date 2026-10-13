@@ -1,0 +1,7 @@
+{
+  "block_hash": "0xb3720ccec3dcf333f18e16d3535bf245c355d7c0399e455842e5d91855730d80",
+  "block_number": "26182632",
+  "evidence_limits": "Provider observation with before/after block identity checks; not cryptographic proof, independent corroboration, or a guarantee of finality. A reorg between reads and back again can escape detection.",
+  "token": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "total_supply_base_units": "1000000000000000000000000000"
+}

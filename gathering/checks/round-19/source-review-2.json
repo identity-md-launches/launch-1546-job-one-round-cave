@@ -1,0 +1,606 @@
+[
+  {
+    "file": "line-2/tools/handoff/handoff.py",
+    "sha256": "0b3878b76c13a18951601aef2ec48daf8c56fbb195fea953be797a7f1d8df97d",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import io",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import stat",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "50: fd = os.open(path, os.O_RDONLY | getattr(os, \"O_NOFOLLOW\", 0) |",
+      "52: with os.fdopen(fd, \"rb\") as handle:",
+      "224: with output.open(\"xb\") as handle:"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-catalog/catalog.py",
+    "sha256": "010341a13db84e8849c6d07ed2f31c2ee4c3af5bb78d6b43d01acc7b1bbe7d5d",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import stat",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "124: with target.open(\"xb\") as stream:",
+      "155: result = verify(workspace_file(args.catalog).read_bytes())"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-catalog/test_catalog.py",
+    "sha256": "0147467e304b12552f7108d79700112d439f2eaa20e6fe82d995a51cf0f7d956",
+    "imports": [
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import shutil",
+      "import tempfile",
+      "import unittest"
+    ],
+    "io": [
+      "22: self.addCleanup(shutil.rmtree, self.temp)",
+      "29: self.a.write_bytes(module.build({\"one.txt\": b\"one\\n\"}))",
+      "30: self.b.write_bytes(module.build({\"two.txt\": b\"two\\n\"}))",
+      "50: self.a.write_bytes(b\"not a handoff\")"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-compare/compare_handoff.py",
+    "sha256": "67310be1ac39c458c7aa063a267a992115bf889007d5d9c1ac659e45940fec19",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import struct",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-compare/test_compare.py",
+    "sha256": "6c3b00e696d06459a51cc3a482299b010777cac5ca1a40f3c165c63aa4f2f117",
+    "imports": [
+      "import contextlib",
+      "import hashlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import zipfile"
+    ],
+    "io": [
+      "87: data = Path('line-2/handoff.zip').read_bytes()",
+      "154: link.unlink()",
+      "160: link.unlink()",
+      "163: run = subprocess.run([sys.executable, '-B',"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-content/content.py",
+    "sha256": "f051891097b0e681362d8d23785d6da07cf4523494a75c01a0cb304ff54c616f",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import importlib.util",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import re",
+      "import stat",
+      "import struct",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "86: def read_expectation(raw):",
+      "87: fd = os.open(workspace_path(raw), os.O_RDONLY | getattr(os, \"O_NOFOLLOW\", 0)",
+      "92: with os.fdopen(fd, \"rb\") as handle:",
+      "128: data = read_expectation(expectation)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-content/test_content.py",
+    "sha256": "b3484af0bd8e36871e57cad1b8172f6efead4da28ee7b3e03122cfc89a767d6e",
+    "imports": [
+      "import contextlib",
+      "import copy",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import tempfile",
+      "import unittest"
+    ],
+    "io": [
+      "26: self.tmp = tempfile.TemporaryDirectory(dir=\"test/scratch\")",
+      "31: self.archive.write_bytes(writer.build({\"a.txt\": b\"original\", \"nested/empty\": b\"\"}))",
+      "36: self.expected.write_text(json.dumps(self.expectation), encoding=\"utf-8\")",
+      "46: self.archive.write_bytes(writer.build({\"\u00e9/\ud83d\udc38\": b\"hello\"}))",
+      "52: self.archive.write_bytes(writer.build({\"a.txt\": b\"modified\", \"nested/empty\": b\"\"}))",
+      "64: self.archive.write_bytes(writer.build({\"a.txt\": b\"original\", \"extra\": b\"x\"}))",
+      "71: self.archive.write_bytes(writer.build({\"a.txt\": b\"original\", \"nested/empty\": b\"\", \"extra\": b\"x\"}))",
+      "102: self.archive.write_bytes(b\"not an archive\")",
+      "109: content.read_expectation(path)",
+      "113: content.read_expectation(str(link))",
+      "115: content.read_expectation(str(self.root))",
+      "122: self.archive.write_bytes(writer.build({\"different\": b\"x\"}))",
+      "126: self.expected.write_text(\"invalid\")"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-contract/contract.py",
+    "sha256": "43971b15bb6892e9329043c3418407036d05917b17f0d5564764fe8926b85578",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-contract/test_contract.py",
+    "sha256": "d337d7e8970d43772ff272e6eadc7f1a43d6d7df9d0146c2dca7bf3c06d58da7",
+    "imports": [
+      "import io",
+      "import json",
+      "import unittest",
+      "import zipfile",
+      "from pathlib import Path",
+      "import importlib.util"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-dependencies/dependencies.py",
+    "sha256": "3e3fb3899e6de289e5bc91ac2396e4ab23bc40905082f9de1a10a5979d36124c",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import io",
+      "import json",
+      "import struct",
+      "import sys",
+      "import zipfile",
+      "from pathlib import Path",
+      "import importlib.util"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-dependencies/test_dependencies.py",
+    "sha256": "937f263e04f886433d6c0ed7094d38c61e8e9c18599349f1b082cd71122ab679",
+    "imports": [
+      "import contextlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "from unittest import mock",
+      "import unittest",
+      "import zipfile"
+    ],
+    "io": [
+      "133: def test_path_single_read_and_early_declaration_refusal(self):",
+      "149: if link.is_symlink(): link.unlink()",
+      "157: link.unlink()",
+      "169: if output.exists(): output.unlink()",
+      "178: before = output.read_bytes()",
+      "184: self.assertEqual(output.read_bytes(), before)",
+      "186: output.unlink()",
+      "190: if output.exists(): output.unlink()"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-impact/impact.py",
+    "sha256": "2692993367e47c9d5aaa24b6040c383d0d61f965573101f8443a218eb22604e5",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import io",
+      "import json",
+      "import struct",
+      "import sys",
+      "import zipfile",
+      "from pathlib import Path",
+      "import importlib.util",
+      "from collections import deque"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-impact/test_impact.py",
+    "sha256": "4aee121ab497769be198dda06b681439d5ab0a843dc760e1e10a49b60da3d8e7",
+    "imports": [
+      "import contextlib",
+      "import hashlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import tempfile",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import zipfile",
+      "import os"
+    ],
+    "io": [
+      "28: self.temp = tempfile.TemporaryDirectory(dir=str(Path('test/scratch').absolute()))",
+      "204: before.write_bytes(impact.WRITER.build(self.files))",
+      "205: after.write_bytes(impact.WRITER.build(self.changed(leaf=b'x')))",
+      "206: graph.write_text(json.dumps(self.document))",
+      "222: Path(paths[1]).write_bytes(b'corrupt')",
+      "243: Path(paths[2]).write_text('{}')",
+      "260: path.write_bytes(b'replaced after read')"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-inspect/inspect_handoff.py",
+    "sha256": "62cc8e4b31c231eb394bd5f3053c2db29c05fc4fa62d3aeafe76027a52b8103a",
+    "imports": [
+      "import argparse",
+      "from dataclasses import dataclass",
+      "import hashlib",
+      "import io",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import re",
+      "import stat",
+      "import struct",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "53: def read_exact(handle, size):",
+      "90: central = io.BytesIO(read_exact(handle, cd_size))",
+      "95: fields = struct.unpack(\"<4s6H3I5H2I\", read_exact(central, 46))",
+      "101: raw_name = read_exact(central, name_len)",
+      "103: read_exact(central, extra_len + comment_len)",
+      "123: local = struct.unpack(\"<4s5H3I2H\", read_exact(handle, 30))",
+      "130: if read_exact(handle, lname_len) != raw_name:",
+      "211: with archive.open(MANIFEST) as source:",
+      "219: with archive.open(name) as source:",
+      "246: fd = os.open(current, os.O_RDONLY | getattr(os, \"O_NOFOLLOW\", 0)",
+      "248: with os.fdopen(fd, \"rb\") as handle:"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-inspect/test_inspect.py",
+    "sha256": "2abd99e6bbf72e2b4f4c572891d4ad61d4c5913241efd4818a78e0d4430d5048",
+    "imports": [
+      "import hashlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import stat",
+      "import struct",
+      "import sys",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import warnings",
+      "import zipfile",
+      "import inspect_handoff as inspector"
+    ],
+    "io": [
+      "61: data = Path(\"line-2/handoff.zip\").read_bytes()",
+      "71: files = {p.name: p.read_bytes() for p in root.iterdir() if p.is_file()}",
+      "214: def test_outside_paths_rejected_before_open(self):"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-landing/landing.py",
+    "sha256": "e26700185f6f7adda7ec16d09094cad5b0da775b184924e19aa1ae368a5547ef",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import stat",
+      "import struct",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "79: fd = os.open(Path.cwd(), flags)",
+      "82: child = os.open(part, flags, dir_fd=fd)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-landing/test_landing.py",
+    "sha256": "828ade1112929d359a45141b7c33d324f698de12bf3ec3e8e4eeb20958005ab0",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import shutil",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import landing"
+    ],
+    "io": [
+      "20: shutil.rmtree(ROOT)",
+      "25: shutil.rmtree(ROOT)",
+      "37: (target / \"README.md\").write_text(\"public fixture\")",
+      "49: (ROOT / \"received\").unlink()",
+      "50: (ROOT / \"received\").write_text(\"public fixture\")",
+      "58: (target / \"nested\").write_text(\"public fixture\")",
+      "77: bad.write_bytes(Path(\"line-2/handoff.zip\").read_bytes() + b\"bad\")",
+      "84: def test_demo_is_read_only(self):",
+      "93: (target / \"readme.MD\").write_text(\"public fixture; not read\")",
+      "108: path.write_text(\"public fixture\")",
+      "112: path.unlink()",
+      "117: (target / \"README.md\").write_text(\"fixture\")",
+      "118: (target / \"readme.md\").write_text(\"other fixture\")",
+      "142: def test_scans_are_cached_and_do_not_read_contents(self):",
+      "145: (target / \"unrelated\").write_text(\"never read\")",
+      "147: patch.object(Path, \"read_bytes\", side_effect=AssertionError(\"content read\")):",
+      "159: (target / name).write_text(\"fixture\")",
+      "182: def test_public_receipt_api_refuses_unsafe_names_before_open(self):"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-portability/portability.py",
+    "sha256": "6a2f646e3414afe34d60a467d460b3ca0a9963e6605df6edc091bc370394a96d",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import struct",
+      "import sys",
+      "import unicodedata",
+      "import zipfile"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-portability/test_portability.py",
+    "sha256": "99534cc0d781f7af00d76ad8813ee9c8368a5b7f39ba01197595fc12049da2aa",
+    "imports": [
+      "import contextlib",
+      "import hashlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import tempfile",
+      "import unittest",
+      "import zipfile"
+    ],
+    "io": [
+      "100: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "113: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "128: # Python 3.12 returns absolute TemporaryDirectory names, even when",
+      "133: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "149: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "160: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "162: path.write_bytes(b'bad archive')",
+      "172: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "174: digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()",
+      "185: with tempfile.TemporaryDirectory(dir='test/scratch') as root:",
+      "187: data = Path(path).read_bytes().replace(b'payload for CON.txt', b'changed for CON.txt')",
+      "188: Path(path).write_bytes(data)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-reproduce/reproduce.py",
+    "sha256": "28cf0b5fc99da866d79839d5b5d7945c54740c52366e5505af34d98ea525e956",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-2/tools/handoff-reproduce/test_reproduce.py",
+    "sha256": "ca73a48d31f504286315a7b82a190ad5c8b5ea16d24b14798fffa0b9007b2d63",
+    "imports": [
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest",
+      "import zipfile",
+      "import reproduce as R"
+    ],
+    "io": [
+      "101: with tempfile.TemporaryDirectory(dir=root) as folder:",
+      "105: path.write_bytes(data)",
+      "106: result = subprocess.run(command + [str(path)], capture_output=True, text=True)",
+      "112: path.write_bytes(self.data)",
+      "116: result = subprocess.run(command + [raw], capture_output=True, text=True)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-review/review.py",
+    "sha256": "ddcef25d8b26e24da874d2e0f1da53dd50a106c10305fe7ed27ae1030db206b8",
+    "imports": [
+      "import argparse",
+      "import io",
+      "import json",
+      "import struct",
+      "import sys",
+      "import zipfile",
+      "from pathlib import Path",
+      "import importlib.util"
+    ],
+    "io": [
+      "121: expectation_data = CONTENT.read_expectation(expectation)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-review/test_review.py",
+    "sha256": "a1009d4f88e1311713a02be588bd93157daf9bd560059381bf8718c21c7de397",
+    "imports": [
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import zipfile",
+      "import review as R"
+    ],
+    "io": [
+      "32: self.temp = tempfile.TemporaryDirectory(dir=root)",
+      "41: dest.write_bytes(data)",
+      "44: self.archive.write_bytes(self.data)",
+      "109: expectation.write_bytes(data)",
+      "120: expectation.write_bytes(expected)",
+      "124: self.archive.write_bytes(R.WRITER.build({\"wrong\": b\"revision\"}))",
+      "125: expectation.write_bytes(b\"invalid replacement\")",
+      "128: patch.object(R.CONTENT, \"read_expectation\", wraps=R.CONTENT.read_expectation) as er:",
+      "139: expectation.write_bytes(self.expectation())",
+      "148: expectation.write_bytes(self.expectation())",
+      "152: self.archive.write_bytes(data)",
+      "153: result = subprocess.run(command, capture_output=True, text=True)",
+      "160: expectation.write_bytes(b\"{}\")",
+      "161: result = subprocess.run(command, capture_output=True, text=True)",
+      "195: (self.source / \"README.md\").write_bytes(b\"changed\")",
+      "196: (self.source / \"nested/empty\").unlink()",
+      "197: (self.source / \"added.txt\").write_bytes(b\"new\")",
+      "230: def test_archive_is_read_once(self):",
+      "248: before = {p: p.read_bytes() for p in self.source.rglob(\"*\") if p.is_file()}",
+      "253: self.assertEqual(before, {p: p.read_bytes() for p in before})",
+      "278: self.archive.write_bytes(b\"invalid replacement\")",
+      "320: result = subprocess.run(command + [destination], capture_output=True, text=True)",
+      "333: def read_then_replace(path, limit):",
+      "335: self.archive.write_bytes(b\"invalid replacement\")",
+      "337: with patch.object(R.WRITER, \"regular_bytes\", side_effect=read_then_replace):",
+      "363: self.archive.write_bytes(data)",
+      "364: result = subprocess.run(command, capture_output=True, text=True)",
+      "371: self.archive.write_bytes(self.data)",
+      "372: (self.source / \"extra\").write_bytes(b\"new\")",
+      "373: result = subprocess.run(command + [\"--source\", str(self.source)], capture_output=True, text=True)",
+      "376: result = subprocess.run(command + [\"--sha256\", \"bad\"], capture_output=True, text=True)"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-source/source_check.py",
+    "sha256": "dc1d175220e15ccdadbf7520d691920a6e25040e4e4d9dbd7ebd8c90d8e9f5de",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import importlib.util",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import stat",
+      "import struct",
+      "import sys",
+      "import zipfile"
+    ],
+    "io": [
+      "90: fd = os.open(path, os.O_RDONLY | getattr(os, \"O_NOFOLLOW\", 0)",
+      "92: with os.fdopen(fd, \"rb\") as stream:"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-source/test_source.py",
+    "sha256": "fe7415943529eb0f18142a51431c4f424b9b966f5ce20cc2d7bbb2c2d4cb7178",
+    "imports": [
+      "import contextlib",
+      "import hashlib",
+      "import importlib.util",
+      "import io",
+      "import os",
+      "from pathlib import Path",
+      "import tempfile",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import source_check as tool"
+    ],
+    "io": [
+      "23: self.temp = tempfile.TemporaryDirectory(prefix=\"handoff-source-\", dir=\"/tmp\")",
+      "28: (Path(\"source\") / name).write_bytes(data)",
+      "29: Path(\"bundle.zip\").write_bytes(PRODUCER.build(self.payload))",
+      "44: Path(\"source/a.txt\").write_bytes(b\"ALPHA\")",
+      "50: Path(\"source/a.txt\").unlink()",
+      "51: Path(\"source/new\").write_bytes(b\"new\")",
+      "58: if p.is_file(): p.unlink()",
+      "66: Path(\"source/HANDOFF.json\").write_bytes(b\"note\")",
+      "70: Path(\"source/caf\u00e9.txt\").write_bytes(b\"public\")",
+      "95: Path(\"source/extra\").write_bytes(b\"\")",
+      "99: Path(\"source/a.txt\").write_bytes(b\"123456\")",
+      "111: digest = hashlib.sha256(Path(\"bundle.zip\").read_bytes()).hexdigest()",
+      "116: Path(\"bundle.zip\").write_bytes(b\"invalid\")",
+      "126: if len(calls) == 1: Path(\"source/new\").write_bytes(b\"change\")",
+      "137: if expected == 2: Path(\"source/a.txt\").unlink()",
+      "138: if expected == 1: Path(\"bundle.zip\").write_bytes(b\"invalid\")"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-subset/subset.py",
+    "sha256": "3266695c03cedc1a7cdb09bce3396c72b7ce3bb93c02f37ea4b611731e45bf3f",
+    "imports": [
+      "import argparse",
+      "import io",
+      "import json",
+      "import struct",
+      "import sys",
+      "import zipfile",
+      "from pathlib import Path",
+      "import importlib.util"
+    ],
+    "io": [
+      "89: with output.open('xb') as handle:",
+      "93: output.unlink()"
+    ]
+  },
+  {
+    "file": "line-2/tools/handoff-subset/test_subset.py",
+    "sha256": "5b832ce878e2620f2164f3867c4fc00d2604ff08ba836a78ce7dd10a486446ba",
+    "imports": [
+      "import contextlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import zipfile"
+    ],
+    "io": [
+      "97: def test_cli_output_and_no_overwrite_or_extraction(self):",
+      "101: if out.exists(): out.unlink()",
+      "106: data = out.read_bytes()",
+      "112: self.assertEqual(out.read_bytes(), data)",
+      "114: out.unlink()",
+      "120: if link.is_symlink(): link.unlink()",
+      "128: link.unlink()",
+      "141: result = subprocess.run([sys.executable, '-B', 'line-2/tools/handoff-subset/subset.py',"
+    ]
+  }
+]

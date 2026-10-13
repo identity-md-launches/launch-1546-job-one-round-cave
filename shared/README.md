@@ -191,3 +191,19 @@ python3 -B shared/timeline-handoff/timeline_handoff.py demo
 Twelve integration tests passed. The demo uses dated real ZTO evidence, preserves
 unsampled gaps and carries conflicts as diagnostics. Integrity does not establish
 provider honesty, complete history, finality, balances or a sender's identity.
+
+## Account proof handoff (Gathering 19)
+
+[proof-handoff](proof-handoff/README.md) joins Line 1's real ZTO account proof
+with Line 2's deterministic archive. The receiver checks original snapshot
+bytes, three header hashes, the account inclusion path and every account claim,
+and rejects a rehashed false report. The complete folder runs offline.
+
+```sh
+python3 -B shared/proof-handoff/proof_handoff.py demo
+```
+
+Thirteen integration tests and native handoff review passed. The included
+88,860-byte archive contains fresh dated real Ethereum evidence. Verification
+is relative to a supplied state root; it does not authenticate mainnet consensus
+or prove token balances, totalSupply, finality or sender identity.

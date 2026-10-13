@@ -1,0 +1,27 @@
+{
+  "address_count": 0,
+  "addresses": [],
+  "chain_id": 1,
+  "decimals": 18,
+  "event_total": "0",
+  "event_total_raw": "0",
+  "from_block": 26182722,
+  "from_block_anchor": {
+    "hash": "0xbf45624a6e4f421cfc44a0b0e034b95d297bf77b7ae4c4120ca10e66a70106fb",
+    "number": 26182722
+  },
+  "kind": "erc20-transfer-window-ledger",
+  "limitations": "Per-address Transfer-event flows in one bounded provider window; not balances, holders, complete history, trades, pool volume or finality. Self-transfers count once as touching and once in each direction, with zero net. Zero address is retained as an event endpoint, not a holder; mint/burn behavior is not independently verified. Sum of net flows is zero by construction, including zero address, and does not prove completeness or provider honesty.",
+  "read_only": true,
+  "schema_version": 1,
+  "sum_net_raw": "0",
+  "to_block": 26182723,
+  "to_block_anchor": {
+    "hash": "0xd233817472572061eb5979358640d1408041dd8bfcb1df17d56d80e5d45f8e0c",
+    "number": 26182723
+  },
+  "token": "ZTO",
+  "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "transfer_count": 0,
+  "validated": true
+}

@@ -35,7 +35,14 @@ def build(root=Path(".")):
                     f'<h3>{escape(name)}</h3><p>{escape(str(meaning))}</p>'
                     + (f'<p class="tool">Left behind: {escape(str(tool))}</p>' if tool else '')
                     + f'<a href="{folder}/{path.name}">Record JSON</a></div></article>')
-            (future if pending else cards).append(card)
+            if pending:
+                # A future slot is a record, not another finished painting.
+                # Compact links preserve every slot without eighty repeated caves.
+                future.append(f'<article class="pending" data-number="{int(path.stem)}">'
+                              f'<a href="{escape(image, quote=True)}">{int(path.stem):02d} · Not painted yet</a> '
+                              f'<a href="{folder}/{path.name}">Record JSON</a></article>')
+            else:
+                cards.append(card)
         sections.append(f'<section id="{folder}" aria-labelledby="{folder}-title">'
                         f'<div class="section-head"><h2 id="{folder}-title">{title}</h2>'
                         f'<p>{escape(goal)}</p></div><div class="grid">' + ''.join(cards) + '</div>'
@@ -57,7 +64,7 @@ nav{display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;padding-top:1rem}h2{font-size:2
 .section-head p{max-width:740px;color:var(--muted)}section{margin-bottom:4rem;scroll-margin-top:1rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.4rem}.card{background:var(--panel);max-width:530px;overflow:hidden;border-radius:4px}
 .card img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}.caption{padding:1.2rem}.caption h3{font-size:1.5rem;margin:.2rem 0}.caption p{margin:.5rem 0}.caption>a{font:.85rem system-ui,sans-serif}
-details{margin-top:1.5rem}summary{cursor:pointer;color:var(--muted);padding:.8rem 0}.future{margin-top:1rem}.future .card{opacity:.85}footer{border-top:1px solid #69513b;color:var(--muted);padding-bottom:3rem}
+details{margin-top:1.5rem}summary{cursor:pointer;color:var(--muted);padding:.8rem 0}.future{margin-top:1rem}.future .card{opacity:.85}.pending{padding:.6rem;border-bottom:1px solid #69513b;font:.85rem/1.5 system-ui,sans-serif}.pending a+a{margin-left:.6rem}footer{border-top:1px solid #69513b;color:var(--muted);padding-bottom:3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style></head><body><a class="skip" href="#walls">Skip to walls</a><header>
 <p class="eyebrow">Pepeolithic · Base cave</p><h1>Four lines.<br>One gathering.</h1>

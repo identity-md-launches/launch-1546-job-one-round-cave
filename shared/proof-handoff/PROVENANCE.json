@@ -1,0 +1,77 @@
+{
+  "dependencies": [
+    {
+      "source": "line-1/tools/account-proof-check/account_proof_check.py",
+      "source_sha256": "dbca7aad4e1e571aaefb5ce1a917eb91ac305795808c107780fe0fbaeddb5e77",
+      "copy": "vendor/account-proof-check/account_proof_check.py",
+      "copy_sha256": "e053dfeb4506a50d4f35359b75744b5c6848bad220faff6752ac37ba390d0320",
+      "adaptations": [
+        "snapshot_anchor accepts immutable bytes as well as paths, allowing proof verification without extracting archive payloads; validation is unchanged"
+      ]
+    },
+    {
+      "source": "line-1/tools/header-hash-check/header_hash_check.py",
+      "source_sha256": "60b9b0026c7d90c3d1750d93824e1458d9479b00f9796e2afeb179f33aa524c5",
+      "copy": "vendor/header-hash-check/header_hash_check.py",
+      "copy_sha256": "60b9b0026c7d90c3d1750d93824e1458d9479b00f9796e2afeb179f33aa524c5",
+      "adaptations": []
+    },
+    {
+      "source": "line-1/tools/header-hash-check/keccak.py",
+      "source_sha256": "d0497bea08fc3a80630ac179286f619181337951d232ee2bdcc0e8b5ed1a2b5a",
+      "copy": "vendor/header-hash-check/keccak.py",
+      "copy_sha256": "d0497bea08fc3a80630ac179286f619181337951d232ee2bdcc0e8b5ed1a2b5a",
+      "adaptations": []
+    },
+    {
+      "source": "line-1/tools/snapshot-seal/snapshot_seal.py",
+      "source_sha256": "19e05ff2d222e536edad85e7157ec4f67557c21c93f0e71fb754816ed3dd155b",
+      "copy": "vendor/snapshot-seal/snapshot_seal.py",
+      "copy_sha256": "3f37c765d3da7d83f3fd66db3b5c265e854d6081cd6c8746b97b3a8a2629d3de",
+      "adaptations": [
+        "standalone workspace root is invocation cwd; glue invokes only the bytes verifier"
+      ]
+    },
+    {
+      "source": "line-1/tools/pinned-snapshot/pinned_snapshot.py",
+      "source_sha256": "c59f0cbf2837f6c2c4b7763f5230fbad26ae9545067036198140aef85f321311",
+      "copy": "vendor/pinned-snapshot/pinned_snapshot.py",
+      "copy_sha256": "c59f0cbf2837f6c2c4b7763f5230fbad26ae9545067036198140aef85f321311",
+      "adaptations": []
+    },
+    {
+      "source": "line-1/tools/rpc-snapshot/rpc_snapshot.py",
+      "source_sha256": "1de12a17cf5bced74e97782c9433e31a9e6a42bf8fe7a6b2ed6a6b01cc5e858b",
+      "copy": "vendor/rpc-snapshot/rpc_snapshot.py",
+      "copy_sha256": "1de12a17cf5bced74e97782c9433e31a9e6a42bf8fe7a6b2ed6a6b01cc5e858b",
+      "adaptations": []
+    },
+    {
+      "source": "line-2/tools/handoff/handoff.py",
+      "source_sha256": "0b3878b76c13a18951601aef2ec48daf8c56fbb195fea953be797a7f1d8df97d",
+      "copy": "vendor/handoff/handoff.py",
+      "copy_sha256": "0b3878b76c13a18951601aef2ec48daf8c56fbb195fea953be797a7f1d8df97d",
+      "adaptations": []
+    },
+    {
+      "source": "line-2/tools/handoff-inspect/inspect_handoff.py",
+      "source_sha256": "62cc8e4b31c231eb394bd5f3053c2db29c05fc4fa62d3aeafe76027a52b8103a",
+      "copy": "vendor/handoff-inspect/inspect_handoff.py",
+      "copy_sha256": "62cc8e4b31c231eb394bd5f3053c2db29c05fc4fa62d3aeafe76027a52b8103a",
+      "adaptations": []
+    }
+  ],
+  "workspace_io": {
+    "source": "shared/group-handoff/group_handoff.py",
+    "source_sha256": "361cdc6d335901f1f914faf81cbf8f16c47d32a5ae7dcdbb07384527e81e81be",
+    "selected_functions": [
+      "file_parts",
+      "parent_descriptor",
+      "read_workspace",
+      "save_new"
+    ],
+    "copy": "workspace_io.py",
+    "copy_sha256": "06f9a10eb33181225e5672bc9bcb71b071d6027d2bfacb42060800312dfd97b3",
+    "adaptation": "Copied only the four no-follow I/O helpers, their standard-library imports and the same 99000-byte bound."
+  }
+}

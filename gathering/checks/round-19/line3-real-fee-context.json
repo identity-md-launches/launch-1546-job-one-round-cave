@@ -1,0 +1,67 @@
+{
+  "checkedViolations": [],
+  "context": {
+    "baseFeePerGasWei": "73305640",
+    "chainId": "1",
+    "source": "Explicit caller-supplied value; no block or freshness verified."
+  },
+  "fees": {
+    "baseFeeShortfallPerGasWei": "0",
+    "contextBurnCeilingAtGasLimitWei": "7330564000000",
+    "contextFeeCeilingAtGasLimitWei": "107330564000000",
+    "contextPriorityCeilingAtGasLimitWei": "100000000000000",
+    "effectiveGasPriceWei": "1073305640",
+    "effectivePriorityFeePerGasWei": "1000000000",
+    "feeCeilingAtGasLimitWei": "200000000000000",
+    "fullPriorityAvailable": true,
+    "maxBaseFeeForFeeCapWei": "2000000000",
+    "maxBaseFeeForFullPriorityWei": "1000000000",
+    "maxFeePerGasWei": "2000000000",
+    "maxPriorityFeePerGasWei": "1000000000",
+    "nativeFeeAsset": "ETH",
+    "valuePlusFeeCeilingWei": "200000000000000"
+  },
+  "inputFormat": "rlp",
+  "inspection": {
+    "calldata": {
+      "arguments": {},
+      "candidateMethod": "totalSupply",
+      "selector": "0x18160ddd",
+      "status": "abi-pattern-match"
+    },
+    "destinationLabel": "ZTO",
+    "feeBudget": {
+      "gasFeeCapWei": "200000000000000",
+      "meaning": "Gas limit times maximum fee per gas; excludes token transfers. Not an estimate.",
+      "valuePlusGasFeeCapWei": "200000000000000"
+    },
+    "transaction": {
+      "accessList": [],
+      "calldataSelector": "0x18160ddd",
+      "chainId": "1",
+      "data": "0x18160ddd",
+      "gasLimit": "100000",
+      "maxFeePerGas": "2000000000",
+      "maxPriorityFeePerGas": "1000000000",
+      "nonce": "0",
+      "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+      "type": "EIP-1559",
+      "typeByte": "0x02",
+      "value": "0"
+    },
+    "warnings": [
+      "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+      "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior."
+    ]
+  },
+  "passesCheckedFeeConstraints": true,
+  "schema": "fee-context/v1",
+  "warnings": [
+    "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+    "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior.",
+    "EIP-1559 arithmetic only; caller must establish that these rules apply to the supplied context.",
+    "Base fee is unverified input, not a live quote or prediction. Token destination does not change the native gas asset.",
+    "Ceilings use gasLimit, not gas used; actual gas charges, refunds, execution, balance, nonce, block limits and inclusion are unverified.",
+    "No sender is supplied. Value plus fee ceiling is arithmetic, not proof of funds or safety to sign."
+  ]
+}

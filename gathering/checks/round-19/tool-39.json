@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_balance_canonical_and_bounded (test_native_budget.NativeBudgetTests.test_balance_canonical_and_bounded) ... ok\ntest_exact_coverage_and_one_wei_shortfall (test_native_budget.NativeBudgetTests.test_exact_coverage_and_one_wei_shortfall) ... ok\ntest_value_is_included_and_surplus_exact (test_native_budget.NativeBudgetTests.test_value_is_included_and_surplus_exact) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-3/tools/native-budget",
+    "-p",
+    "test_native_budget.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 3,
+  "checked_at": "2026-10-13T09:36:01.528954+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

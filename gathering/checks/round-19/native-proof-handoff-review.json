@@ -1,0 +1,58 @@
+{
+  "archive_bytes": 88860,
+  "archive_sha256": "0dc59baa9961d262f9e473613d3b45c65b958c882187b408a7c9edb9a1a60928",
+  "checks": {
+    "content": {
+      "receipt": null,
+      "status": "not-requested"
+    },
+    "integrity": {
+      "status": "pass"
+    },
+    "landing": {
+      "receipt": null,
+      "status": "not-requested"
+    },
+    "portability": {
+      "issues": [],
+      "profile": "conservative-filenames-v2",
+      "status": "pass"
+    },
+    "reproduction": {
+      "receipt": {
+        "archive_bytes": 88860,
+        "archive_sha256": "0dc59baa9961d262f9e473613d3b45c65b958c882187b408a7c9edb9a1a60928",
+        "byte_reproducible": true,
+        "file_count": 3,
+        "first_difference_offset": null,
+        "format": "handoff-reproduction-v1",
+        "payload_bytes": 87956,
+        "profile": "original-handoff-v1-writer",
+        "rebuilt_bytes": 88860,
+        "rebuilt_sha256": "0dc59baa9961d262f9e473613d3b45c65b958c882187b408a7c9edb9a1a60928",
+        "trusted_digest_matched": false,
+        "verified": true
+      },
+      "status": "pass"
+    },
+    "source": {
+      "directory": null,
+      "receipt": null,
+      "status": "not-requested"
+    }
+  },
+  "failed_checks": [],
+  "file_count": 3,
+  "format": "handoff-review-v1",
+  "limits": {
+    "archive_bytes": 69206016,
+    "files": 1000,
+    "manifest_bytes": 524288,
+    "metadata_bytes": 524288,
+    "payload_bytes": 67108864
+  },
+  "note": "Selected format checks only: no sender authentication, payload safety assessment, build reproduction or extraction test. Source scans require a stable workspace and are not atomic snapshots. Content expectations must be independently trusted to identify the intended revision. Landing is a bounded, read-only metadata check at one instant, not a reservation; no destination files are read or written.",
+  "payload_bytes": 87956,
+  "selected_checks_passed": true,
+  "trusted_digest_matched": false
+}

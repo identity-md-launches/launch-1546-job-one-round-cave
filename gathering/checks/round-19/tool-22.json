@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_additions_are_visible_but_not_inferred (test_impact.ImpactTests.test_additions_are_visible_but_not_inferred) ... ok\ntest_baseline_absent_graph_node_refused (test_impact.ImpactTests.test_baseline_absent_graph_node_refused) ... ok\ntest_cli_exits (test_impact.ImpactTests.test_cli_exits) ... ok\ntest_corrupt_unselected_file_refused (test_impact.ImpactTests.test_corrupt_unselected_file_refused) ... ok\ntest_cycle_terminates (test_impact.ImpactTests.test_cycle_terminates) ... ok\ntest_deterministic_order_and_root_digest (test_impact.ImpactTests.test_deterministic_order_and_root_digest) ... ok\ntest_direct_root_edit (test_impact.ImpactTests.test_direct_root_edit) ... ok\ntest_each_file_captured_once (test_impact.ImpactTests.test_each_file_captured_once) ... ok\ntest_graph_invalid_shapes_and_paths (test_impact.ImpactTests.test_graph_invalid_shapes_and_paths) ... ok\ntest_invalid_graph_before_archive_reads (test_impact.ImpactTests.test_invalid_graph_before_archive_reads) ... ok\ntest_json_duplicates_constants_and_size (test_impact.ImpactTests.test_json_duplicates_constants_and_size) ... ok\ntest_limits_and_report_budget (test_impact.ImpactTests.test_limits_and_report_budget) ... ok\ntest_metadata_only_change (test_impact.ImpactTests.test_metadata_only_change) ... ok\ntest_multiple_roots_shared_dependency (test_impact.ImpactTests.test_multiple_roots_shared_dependency) ... ok\ntest_outside_closure (test_impact.ImpactTests.test_outside_closure) ... ok\ntest_paths_symlinks_fifo_and_traversal (test_impact.ImpactTests.test_paths_symlinks_fifo_and_traversal) ... ok\ntest_real_inherited_archive_and_demo (test_impact.ImpactTests.test_real_inherited_archive_and_demo) ... ok\ntest_removal_is_diagnostic (test_impact.ImpactTests.test_removal_is_diagnostic) ... ok\ntest_removed_root (test_impact.ImpactTests.test_removed_root) ... ok\ntest_self_edge (test_impact.ImpactTests.test_self_edge) ... ok\ntest_transitive_same_size_edit (test_impact.ImpactTests.test_transitive_same_size_edit) ... ok\ntest_trusted_digest (test_impact.ImpactTests.test_trusted_digest) ... ok\ntest_unchanged (test_impact.ImpactTests.test_unchanged) ... ok\ntest_undeclared_leaf_refused (test_impact.ImpactTests.test_undeclared_leaf_refused) ... ok\ntest_witness_diamond_tie (test_impact.ImpactTests.test_witness_diamond_tie) ... ok\ntest_witness_prefers_shortest_route (test_impact.ImpactTests.test_witness_prefers_shortest_route) ... ok\ntest_witness_self_and_cycle (test_impact.ImpactTests.test_witness_self_and_cycle) ... ok\ntest_witness_shared_dependency_and_unchanged (test_impact.ImpactTests.test_witness_shared_dependency_and_unchanged) ... ok\ntest_witness_transitive_and_removed (test_impact.ImpactTests.test_witness_transitive_and_removed) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.018s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-2/tools/handoff-impact",
+    "-p",
+    "test_impact.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 29,
+  "checked_at": "2026-10-13T09:35:59.806415+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

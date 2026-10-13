@@ -1,0 +1,491 @@
+[
+  {
+    "file": "line-4/tools/bounded-capture-reader/reader.py",
+    "sha256": "3050d7eef5f544c4bc52f8bfbc08bee37d15907b0d2be7841a25e38187bb56f7",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "import math",
+      "import os",
+      "from pathlib import Path",
+      "import stat"
+    ],
+    "io": [
+      "58: def read_capture(path, max_bytes=MAX_BYTES):",
+      "83: directory = os.open(ROOT, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)",
+      "85: child = os.open(part, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW,",
+      "89: descriptor = os.open(parts[-1], os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK,",
+      "96: with os.fdopen(descriptor, \"rb\") as stream:",
+      "123: capture = read_capture(path)",
+      "133: \"kind\": \"bounded-transfer-capture-check\", \"read_only\": True,"
+    ]
+  },
+  {
+    "file": "line-4/tools/bounded-capture-reader/test_companions.py",
+    "sha256": "3d4b7121d77e2b7934258685969033363f429c159c8f904fc908993e34c4a268",
+    "imports": [
+      "import importlib.util",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest"
+    ],
+    "io": [
+      "30: self.temp = tempfile.TemporaryDirectory(dir=scratch)",
+      "34: self.path.write_bytes(SOURCE.read_bytes())",
+      "46: result = subprocess.run([sys.executable, '-B', str(script), *args],",
+      "56: result = subprocess.run([sys.executable, '-B', str(script), *args],",
+      "63: self.assertTrue(report['read_only'])",
+      "92: self.path.write_bytes(b'{\"raw_logs\":[],\"raw_logs\":[]}')",
+      "98: self.path.write_bytes(raw)",
+      "102: self.path.write_bytes(b'[' * 65 + b'0' + b']' * 65)",
+      "106: self.path.write_bytes(b'\\xff')",
+      "111: with self.path.open('wb') as stream:"
+    ]
+  },
+  {
+    "file": "line-4/tools/bounded-capture-reader/test_reader.py",
+    "sha256": "d3d9c927a531fe517cd81c590e1e1b702de3f7e84f4a0229e987c724559ab567",
+    "imports": [
+      "import contextlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest",
+      "from unittest import mock"
+    ],
+    "io": [
+      "34: self.temp = tempfile.TemporaryDirectory(dir=scratch)",
+      "38: self.path.write_text('{\"ok\":true}')",
+      "49: self.assertEqual(reader.read_capture(self.path, 11), {'ok': True})",
+      "51: reader.read_capture(self.path, 10)",
+      "53: def test_outside_rejected_before_open(self):",
+      "56: reader.read_capture(ROOT.parent / 'not-a-real-input.json')",
+      "58: def test_traversal_rejected_before_open(self):",
+      "61: reader.read_capture(self.root / '..' / 'capture.json')",
+      "67: reader.read_capture(link)",
+      "73: reader.read_capture(link / 'capture.json')",
+      "78: reader.read_capture(path)",
+      "83: result = subprocess.run([sys.executable, '-B', str(HERE / 'reader.py'), '--capture', str(fifo)],",
+      "93: self.path.write_bytes(raw)",
+      "95: reader.read_capture(self.path)",
+      "98: self.path.write_text('[' * 2000 + ']' * 2000)",
+      "100: reader.read_capture(self.path)",
+      "104: self.path.write_text(json.dumps(value))",
+      "105: self.assertEqual(reader.read_capture(self.path), value)",
+      "106: self.path.write_text('[' * 64 + '0' + ']' * 64)",
+      "107: self.assertIsInstance(reader.read_capture(self.path), list)",
+      "108: self.path.write_text('[' * 65 + '0' + ']' * 65)",
+      "110: reader.read_capture(self.path)",
+      "115: reader.read_capture(self.path, limit)",
+      "117: def test_read_is_bounded_even_if_file_grows_after_stat(self):",
+      "126: reader.read_capture(self.path, 12)",
+      "135: consumer.read_capture(path)",
+      "138: consumer.read_capture(self.path)",
+      "146: self.path.write_text('{\"a\":NaN}')",
+      "148: result = subprocess.run([sys.executable, '-B', consumer.__file__, '--capture', str(self.path)],"
+    ]
+  },
+  {
+    "file": "line-4/tools/erc20-transfer-window/test_transfer_window.py",
+    "sha256": "f122d33b6081360f698dd01bc20133443668f56360851a264082a68b99a05655",
+    "imports": [
+      "import contextlib",
+      "import copy",
+      "import io",
+      "import json",
+      "import http.server",
+      "import threading",
+      "from pathlib import Path",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import transfer_window as window"
+    ],
+    "io": [
+      "16: FIXTURE = json.loads(Path(__file__).with_name('observed_logs.json').read_text())",
+      "186: patch.object(window.urllib.request, 'urlopen', side_effect=AssertionError('global opener')), \\",
+      "257: def test_valid_envelope_user_agent_and_read_method(self):",
+      "282: def test_nonread_methods_and_credential_endpoints_never_network(self):"
+    ]
+  },
+  {
+    "file": "line-4/tools/erc20-transfer-window/transfer_window.py",
+    "sha256": "a982a006f122b75fb151abfab65e2d8bbb47942220ee5df47110a81a2a30bf09",
+    "imports": [
+      "import argparse",
+      "import datetime as dt",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import re",
+      "import sys",
+      "import urllib.error",
+      "import urllib.request",
+      "import urllib.parse"
+    ],
+    "io": [
+      "53: \"\"\"Build a fresh transport without environment or system proxy discovery.\"\"\"",
+      "54: return urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())",
+      "73: with public_opener().open(request, timeout=25) as response:",
+      "318: \"read_only\": True,"
+    ]
+  },
+  {
+    "file": "line-4/tools/strict-rpc-json/strict_rpc.py",
+    "sha256": "d138a19db26464bd63b13afc5f7f42051d66b213c632788beb3fb075883138cd",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path"
+    ],
+    "io": [
+      "58: capture = reader.read_capture(HERE.parent / 'transfer-crosscheck' / 'publicnode.json')"
+    ]
+  },
+  {
+    "file": "line-4/tools/strict-rpc-json/test_strict_rpc.py",
+    "sha256": "2b39bc6fa99e91c79f58bdd8522123428d485e9ea5be278a41a6337c54d489fb",
+    "imports": [
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import strict_rpc as strict"
+    ],
+    "io": [
+      "23: capture = strict.reader.read_capture(strict.HERE.parent / 'transfer-crosscheck' / 'publicnode.json')"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-anchor-audit/audit.py",
+    "sha256": "91ca32f43c22404fa6f2ad56296ec61bf39841c8cfdb7896cf7edd750f141b1a",
+    "imports": [
+      "import argparse",
+      "import datetime as dt",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "128: \"read_only\": True, \"raw_logs_revalidated\": True,",
+      "153: capture = reader.read_capture(HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\")",
+      "154: evidence = reader.read_capture(HERE / \"observations.json\")",
+      "160: capture = reader.read_capture(args.capture)",
+      "161: evidence = collect(capture, args.rpc or window.DEFAULT_RPC) if args.live else reader.read_capture(args.evidence)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-anchor-audit/test_audit.py",
+    "sha256": "d76c53c91b8ebeaa686a1b22404319af30ea7f819bae00c0126fec58d31ac83e",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest",
+      "from unittest.mock import patch"
+    ],
+    "io": [
+      "21: self.capture = audit.reader.read_capture(HERE.parent / \"transfer-crosscheck/publicnode.json\")",
+      "22: self.evidence = audit.reader.read_capture(HERE / \"observations.json\")",
+      "172: return subprocess.run([sys.executable, \"-B\", str(HERE / \"audit.py\"), *args],",
+      "179: with tempfile.TemporaryDirectory(dir=scratch) as folder:",
+      "182: p.write_text(json.dumps(self.evidence))",
+      "187: p.write_text('{\"chain_id\":1,\"chain_id\":2}')"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-counterparties/counterparties.py",
+    "sha256": "1693cfbf3f37450aaae2920850d85abcfae14bac3ada31ab965de152d3f6a4a5",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "45: \"read_only\": True, \"validated\": True, \"chain_id\": 1,",
+      "69: print(json.dumps(report(activity.read_capture(path), args.address), indent=2, sort_keys=True))"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-counterparties/test_counterparties.py",
+    "sha256": "ca080ca6b60cb3be5f386e02d2797a05f4cc41a0500f226959c3f80b5c841479",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import unittest"
+    ],
+    "io": [
+      "15: self.capture = tool.activity.read_capture(",
+      "83: def test_outside_workspace_rejected_before_open(self):"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-crosscheck/crosscheck.py",
+    "sha256": "374724972a019d56fa46665dc2f1c9f0c8bcd19eb90fe160ab0341d0042ac221",
+    "imports": [
+      "import argparse",
+      "import contextlib",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "39: or capture.get(\"read_only\") is not True",
+      "114: \"read_only\": True, \"providers\": [left[\"rpc\"], right[\"rpc\"]],",
+      "150: left, right = [json.loads((HERE / name).read_text())"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-crosscheck/test_crosscheck.py",
+    "sha256": "adc8b5bafed5d0029b4aca6d10c33e14e0c9def93907e165a5b7222504195076",
+    "imports": [
+      "import copy",
+      "import contextlib",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import unittest",
+      "from unittest import mock",
+      "import crosscheck as c"
+    ],
+    "io": [
+      "14: self.left, self.right = [json.loads((Path(__file__).parent / name).read_text())",
+      "61: (\"read_only\", 1), (\"provider_result\", \"unvalidated\")]",
+      "156: capture = json.loads((Path(__file__).parent / name).read_text())"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-transaction-groups/groups.py",
+    "sha256": "8b87f154efb0016d9ba6d3d02fd093dd8cd01ad03456f0bfd37894a4d24c1b50",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "96: \"read_only\": True, \"raw_logs_revalidated\": True,",
+      "117: print(json.dumps(report(reader.read_capture(path)), indent=2, sort_keys=True))"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-transaction-groups/test_groups.py",
+    "sha256": "e55ec47c4aa4b1ea029cc76f4f0f5dedc16995d90d4e99b90986369e536d5648",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import tempfile",
+      "import unittest"
+    ],
+    "io": [
+      "20: self.capture = groups.reader.read_capture(",
+      "144: run = subprocess.run([sys.executable, \"-B\", str(HERE / \"groups.py\"), \"--demo\"],",
+      "150: with tempfile.TemporaryDirectory(dir=scratch) as folder:",
+      "152: target.write_text(json.dumps(self.capture))",
+      "157: bad = subprocess.run([sys.executable, \"-B\", str(HERE / \"groups.py\"),"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-activity/activity.py",
+    "sha256": "8d629fcaf3c5fe716f15c9a0874a3fde0804ad0574169b10e9b2c90c14f3f67f",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path"
+    ],
+    "io": [
+      "38: def read_capture(path):",
+      "40: return reader.read_capture(path, max_bytes=MAX_CAPTURE_BYTES)",
+      "74: \"read_only\": True,",
+      "97: print(json.dumps(activity(read_capture(path)), indent=2, sort_keys=True))"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-activity/test_activity.py",
+    "sha256": "edac3b3fdde94a1ab92a89491f5764e30a3d7220286b0127facac38d9bb5a950",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "import unittest",
+      "from pathlib import Path"
+    ],
+    "io": [
+      "17: (HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\").read_text()"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-coverage/coverage.py",
+    "sha256": "024fa8795d3ca0fd87776b0893aaebbcd68d82ac3676f531867ef09eb4dd58a3",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path"
+    ],
+    "io": [
+      "38: def read_capture(path):",
+      "40: return reader.read_capture(path, max_bytes=MAX_CAPTURE_BYTES)",
+      "82: \"read_only\": True,",
+      "105: capture = read_capture(HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\")",
+      "107: capture = read_capture(args.capture)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-coverage/test_coverage.py",
+    "sha256": "abb18a2d834128294d12c44b00a11c07e559afd06a125ddae3dbcee4b0cc5566",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import unittest",
+      "from contextlib import redirect_stdout"
+    ],
+    "io": [
+      "20: (HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\").read_text()",
+      "60: duplicate.write_text('{\"token\":\"ZTO\",\"token\":\"IMD\"}')",
+      "63: coverage.read_capture(duplicate)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-ledger/ledger.py",
+    "sha256": "61f0eeefe5a14eaa51a041bfecc44a6518fe26712c270ad3ef4254ebf4d60fca",
+    "imports": [
+      "import argparse",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "20: def read_capture(path):",
+      "22: return activity.reader.read_capture(path, max_bytes=MAX_BYTES)",
+      "67: \"read_only\": True, \"validated\": True, \"chain_id\": 1,",
+      "92: print(json.dumps(report(read_capture(path)), indent=2, sort_keys=True))"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-ledger/test_ledger.py",
+    "sha256": "16368ce9788be59316ef6211bc4de4f148325e4f5c88fb581a206bfe511ed5b7",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import io",
+      "import tempfile"
+    ],
+    "io": [
+      "17: self.capture = tool.read_capture(HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\")",
+      "109: def test_outside_path_is_rejected_before_open(self):",
+      "112: tool.read_capture(\"/outside/never-read.json\")",
+      "114: def test_bounded_read_and_duplicate_keys(self):",
+      "119: with tempfile.TemporaryDirectory(dir=scratch) as directory:",
+      "123: path.write_bytes(data)",
+      "126: tool.read_capture(path)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-receipt/receipt.py",
+    "sha256": "8f53d53ad231ea8df0fa85b0448b67de294eacc3d586993bba444095154d1809",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path"
+    ],
+    "io": [
+      "35: def read_capture(path):",
+      "37: return reader.read_capture(path, max_bytes=MAX_CAPTURE_BYTES)",
+      "65: \"read_only\": True,",
+      "86: capture = read_capture(HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\")",
+      "88: capture = read_capture(args.capture)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-receipt/test_receipt.py",
+    "sha256": "1f234f2c0386c38a935674254088dbe8f3c0a3048d373d8f031d1f4672ea51c0",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "import io",
+      "import json",
+      "from pathlib import Path",
+      "import unittest",
+      "from unittest import mock",
+      "from contextlib import redirect_stdout"
+    ],
+    "io": [
+      "19: self.capture = json.loads((HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\").read_text())",
+      "52: duplicate.write_text('{\"token\":\"ZTO\",\"token\":\"IMD\"}')",
+      "55: receipt.read_capture(duplicate)",
+      "58: receipt.read_capture(duplicate)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-stitch/stitch.py",
+    "sha256": "53a8d44a0ed805f23f5a3ca8de9c380ef5760c1b81eaa44b0b7b9bcbab1b60ab",
+    "imports": [
+      "import argparse",
+      "import copy",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": [
+      "69: \"read_only\": True, \"status\": \"joined\", \"chain_id\": 1,",
+      "93: left = ledger.read_capture(HERE.parent / \"transfer-crosscheck\" / \"publicnode.json\")",
+      "94: right = ledger.read_capture(HERE.parent / \"transfer-crosscheck\" / \"drpc.json\")",
+      "123: pair = ledger.read_capture(args.left), ledger.read_capture(args.right)"
+    ]
+  },
+  {
+    "file": "line-4/tools/transfer-window-stitch/test_stitch.py",
+    "sha256": "3fbb54e6665172c2126d6b311bc338c1a9435268703acacdeb31655515a5e775",
+    "imports": [
+      "import copy",
+      "import importlib.util",
+      "from pathlib import Path",
+      "import unittest"
+    ],
+    "io": [
+      "47: original = tool.ledger.read_capture(",
+      "56: original = tool.ledger.read_capture(",
+      "107: original = tool.ledger.read_capture("
+    ]
+  }
+]

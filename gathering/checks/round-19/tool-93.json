@@ -1,0 +1,15 @@
+{
+  "exit": 0,
+  "stdout": "{\n  \"blocks\": [\n    {\n      \"number\": 26177298,\n      \"observed_hash\": \"0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de\",\n      \"roles\": [\n        \"start\"\n      ],\n      \"saved_hash\": \"0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de\",\n      \"status\": \"matching\",\n      \"transfer_count\": 0\n    },\n    {\n      \"number\": 26177309,\n      \"observed_hash\": \"0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15\",\n      \"roles\": [\n        \"end\",\n        \"transfers\"\n      ],\n      \"saved_hash\": \"0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15\",\n      \"status\": \"matching\",\n      \"transfer_count\": 3\n    }\n  ],\n  \"chain_id\": 1,\n  \"checked_block_count\": 2,\n  \"counts\": {\n    \"changed\": 0,\n    \"matching\": 2,\n    \"unavailable\": 0\n  },\n  \"evidence\": {\n    \"chain_id\": 1,\n    \"kind\": \"erc20-transfer-anchor-observations\",\n    \"observations\": [\n      {\n        \"block\": {\n          \"hash\": \"0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de\",\n          \"number\": \"0x18f6f12\"\n        },\n        \"requested_number\": 26177298\n      },\n      {\n        \"block\": {\n          \"hash\": \"0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15\",\n          \"number\": \"0x18f6f1d\"\n        },\n        \"requested_number\": 26177309\n      }\n    ],\n    \"observed_at\": \"2026-10-13T09:27:41+00:00\",\n    \"rpc\": \"https://ethereum-rpc.publicnode.com\",\n    \"schema_version\": 1\n  },\n  \"from_block\": 26177298,\n  \"kind\": \"erc20-transfer-anchor-audit\",\n  \"limitations\": \"Hashes are compared with a provider's numbered-block responses, not verified against consensus. Matching hashes do not prove event inclusion, log completeness, balances, prices, pool activity or finality. Only boundaries and blocks with observed transfers are checked; other interior blocks are not checked. Reads are sequential, not an atomic snapshot. A changed hash is an observation conflict, not by itself proof of a reorganization. Replay checks retained evidence, not the current chain.\",\n  \"max_checked_blocks\": 64,\n  \"mode\": \"replay\",\n  \"observed_at\": \"2026-10-13T09:27:41+00:00\",\n  \"raw_logs_revalidated\": true,\n  \"read_only\": true,\n  \"rpc\": \"https://ethereum-rpc.publicnode.com\",\n  \"schema_version\": 1,\n  \"status\": \"matching\",\n  \"to_block\": 26177309,\n  \"token\": \"ZTO\",\n  \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n  \"transfer_count\": 3,\n  \"unchecked_interior_block_count\": 10\n}\n",
+  "stderr": "",
+  "command": [
+    "python3",
+    "-B",
+    "line-4/tools/transfer-anchor-audit/audit.py",
+    "--demo"
+  ],
+  "kind": "demo",
+  "tests_run": 0,
+  "checked_at": "2026-10-13T09:36:05.963465+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

@@ -1,0 +1,440 @@
+[
+  {
+    "file": "line-3/tools/access-list-audit/access_audit.py",
+    "sha256": "4388e8ba9634ec9786c0ce21da54a972070211fc562795ab10421dd50332a550",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import rpc_reader as reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/access-list-audit/test_access_audit.py",
+    "sha256": "0d0c3da23b77416fae013762b6773bb0ef6a3ae873529bf2ee88ada9610ef50e",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import random",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import access_audit as a"
+    ],
+    "io": [
+      "149: demo = subprocess.run(prefix+['--demo', '--format', fmt], capture_output=True, text=True)",
+      "152: piped = subprocess.run(prefix+['--stdin', '--format', fmt],",
+      "155: bad = subprocess.run(prefix+['--stdin'], input='0x02c0', capture_output=True, text=True)"
+    ]
+  },
+  {
+    "file": "line-3/tools/amount-view/amount_view.py",
+    "sha256": "ad7e3186a966dc7d8b0661cf9de43c58211f0a6a2b8f459ff7d2a45991791d8e",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import intent"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/amount-view/test_amount_view.py",
+    "sha256": "7b382ad66b42a73e79a15cd34f6edd930ae695bdfc6e8e3e28d19ea1f6c56d88",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import random",
+      "import unittest",
+      "import amount_view as view"
+    ],
+    "io": [
+      "65: def test_no_amount_for_unknown_and_read_calls(self):"
+    ]
+  },
+  {
+    "file": "line-3/tools/calldata-words/test_word_view.py",
+    "sha256": "3d7a32e750813495c3309018266f4212f04037910e7f79b18e1d6e101971d43d",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import word_view as W"
+    ],
+    "io": [
+      "88: good = subprocess.run([sys.executable, '-B', script, '--demo'],",
+      "92: bad = subprocess.run([sys.executable, '-B', script, '--transaction', '0x02c0'],"
+    ]
+  },
+  {
+    "file": "line-3/tools/calldata-words/word_view.py",
+    "sha256": "570ff67bc5feefef448e928a3124255bd31dc21d8780e0346bec9c8c8eb8f5e3",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import intent",
+      "import rpc_reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/canonical-envelope/envelope.py",
+    "sha256": "0d3c326701806643e02a240af67ba3c5a03873b4baed30840a49295c6cc22d31",
+    "imports": [
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import rpc_reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/canonical-envelope/test_envelope.py",
+    "sha256": "a90a999746e5a03d290b11e5c82ade5a499f5f038c90cf9d8798a1cc14f2650d",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import json",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import envelope"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/erc20-intent/intent.py",
+    "sha256": "5502c5be013a0e7f1c6226627fe6feee3d732175bfc328f413e7d49fc22ec101",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import tx_decode as decoder"
+    ],
+    "io": [
+      "8: # environment, network, wallet interfaces or transaction submission are used."
+    ]
+  },
+  {
+    "file": "line-3/tools/erc20-intent/test_intent.py",
+    "sha256": "bf69bab1373a2ef5b5a8b1bac6c87c907e05db9fa9f8a907760a6199a2705257",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import random",
+      "import unittest",
+      "import intent"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/fee-context/fee_context.py",
+    "sha256": "b223dc9f078e27bb7e6e72991e4ffe181be18cd7baacdca104e79dafba08953f",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import re",
+      "import sys",
+      "import rpc_reader as reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/fee-context/test_fee_context.py",
+    "sha256": "52a7d4e7ced65aa8a51b77138b2bcbc25ea710e92bc5112c1a439356a999b0fe",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import random",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import fee_context as f"
+    ],
+    "io": [
+      "138: ok = subprocess.run(prefix+['1000000000', '--demo'], capture_output=True, text=True)",
+      "141: fail = subprocess.run(prefix+['3000000000', '--demo'], capture_output=True, text=True)",
+      "147: bad = subprocess.run(prefix+args, input=text, capture_output=True, text=True)",
+      "150: piped = subprocess.run(prefix+['1', '--stdin'],"
+    ]
+  },
+  {
+    "file": "line-3/tools/fee-envelope/fee_envelope.py",
+    "sha256": "9b00c244abc354bc174e5319c28e01ba97ab7ac0bcbf2ef54da2a1f35716e07d",
+    "imports": [
+      "import argparse",
+      "from pathlib import Path",
+      "import sys",
+      "import tx_decode"
+    ],
+    "io": [
+      "48: \"No network, wallet, key, environment, signing or transaction submission is used.\","
+    ]
+  },
+  {
+    "file": "line-3/tools/fee-horizon/fee_horizon.py",
+    "sha256": "1faedb7a388849b78b8ad4eb47f8c6db663d74400c9ff3125a6f71689160c6b8",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import fee_context"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/fee-horizon/test_fee_horizon.py",
+    "sha256": "deb8a664e1f966f505dc299bb610926d9fe9d28d66a97d9183af20255e523880",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest",
+      "import fee_horizon as h"
+    ],
+    "io": [
+      "46: good = subprocess.run(command + [str(2**256 - 1)],",
+      "50: bad = subprocess.run(command + [str(2**256)],",
+      "127: good = subprocess.run([sys.executable, \"-B\", str(script), \"--demo\",",
+      "134: bad = subprocess.run([sys.executable, \"-B\", str(script), \"--demo\","
+    ]
+  },
+  {
+    "file": "line-3/tools/gas-budget/gas_budget.py",
+    "sha256": "de9efb286f491d9d6ef75ec731604acfc59bac7a33a58de9dcb568900b06b31c",
+    "imports": [
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import rpc_reader as reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/gas-budget/test_gas_budget.py",
+    "sha256": "8aab37f1852deebf4caf485127cfe82ecbb614041281afd017b96577cc006f96",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import json",
+      "import random",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import gas_budget as tool"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/keccak-envelope/keccak_envelope.py",
+    "sha256": "562f8dc6fa0de363f8de2aa093d28975a170a2fdbc51721da781e6786d0f8247",
+    "imports": [
+      "import hashlib",
+      "import importlib.util",
+      "import json",
+      "from pathlib import Path",
+      "import sys"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/keccak-envelope/test_keccak_envelope.py",
+    "sha256": "4450c4b03212206b7c7a3b601d63278d4f699a66e1e69fffcf72710a5a70cbf0",
+    "imports": [
+      "import importlib.util",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest"
+    ],
+    "io": [
+      "64: good = subprocess.run([sys.executable, \"-B\", str(PATH), \"--demo\"],",
+      "68: bad = subprocess.run([sys.executable, \"-B\", str(PATH), \"0x02c0\"],"
+    ]
+  },
+  {
+    "file": "line-3/tools/native-budget/native_budget.py",
+    "sha256": "d5894c629f3a5bc5f9e24e29a20758fe3385ccf9f1580002e536d858ab8eec19",
+    "imports": [
+      "import argparse",
+      "import json",
+      "import re",
+      "import sys",
+      "from pathlib import Path",
+      "import fee_envelope"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/native-budget/test_native_budget.py",
+    "sha256": "79d0b7eaa7b7b8399ed7dceb5efc0fdd78c03a2c6753f41c670588b20e4cf2cb",
+    "imports": [
+      "import sys",
+      "import unittest",
+      "from pathlib import Path",
+      "import native_budget",
+      "from fee_envelope import tx_decode"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/nonce-context/nonce_context.py",
+    "sha256": "c7c982e9f51359de2a97396f827bd3f2918c5479b07d8e57255bde92ad9f84d1",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import re",
+      "import sys",
+      "import tx_decode"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/nonce-context/test_nonce_context.py",
+    "sha256": "c1df41d4a21d40e4f564c41880d741dc2898c90453980502e2caf723b655d128",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import unittest",
+      "import nonce_context as n",
+      "from unittest.mock import patch"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/rlp-byte-map/byte_map.py",
+    "sha256": "5e60b923c9024885c5fa19b1841d0d270786d7c242ed3bfb689f7723f504b08b",
+    "imports": [
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import tx_decode as decoder"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/rlp-byte-map/test_byte_map.py",
+    "sha256": "9198a7bf83c1ab2ea76fbd66c92be368efadd32a7b2bab3340099a6f5bd2f99d",
+    "imports": [
+      "import importlib.util",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import unittest"
+    ],
+    "io": [
+      "66: ok = subprocess.run(command + [\"--demo\"], capture_output=True, text=True)",
+      "69: bad = subprocess.run(command + [\"0x02c0\"], capture_output=True, text=True)"
+    ]
+  },
+  {
+    "file": "line-3/tools/rpc-unsigned-reader/rpc_reader.py",
+    "sha256": "d5ede86a55038b43955a63483ad190bfc69d1c82b1e4eca0523c96903f04dd35",
+    "imports": [
+      "import json",
+      "from pathlib import Path",
+      "import re",
+      "import sys",
+      "import intent"
+    ],
+    "io": [
+      "51: No input files, environment, network, wallet, keys, signing or sending."
+    ]
+  },
+  {
+    "file": "line-3/tools/rpc-unsigned-reader/test_rpc_reader.py",
+    "sha256": "b6d5c7527525469c11111201c9f26111d44f51cf8b6ce8f81a5a6ca0bc2f49ce",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import json",
+      "import random",
+      "import unittest",
+      "from unittest.mock import patch",
+      "import rpc_reader as reader"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/unsigned-diff/test_unsigned_diff.py",
+    "sha256": "003bffe719dd6c9c3ffe87d3c12f08d18908c9d8a1e60f1906b7be8acf61219f",
+    "imports": [
+      "import contextlib",
+      "import hashlib",
+      "import io",
+      "import unittest",
+      "import unsigned_diff as tool"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/unsigned-diff/unsigned_diff.py",
+    "sha256": "30a81da3bc957010d7dcc222f2d7512f73a960f26df67854bc86589ef7e43e48",
+    "imports": [
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import intent"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/unsigned-guard/guard.py",
+    "sha256": "a5177439fe8af9c589c23cee70437dbb79525c1b1b08cd2e03235fd014a0a14f",
+    "imports": [
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import intent"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/unsigned-guard/test_guard.py",
+    "sha256": "dbd9bada7bb9fd1bc0f6b1e1b17ddeec9316880c79881e225849311da1a72543",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import unittest",
+      "import guard"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/zto-eip1559-decoder/test_decoder.py",
+    "sha256": "39fcd661b54523c4a51fa06b526e78b642edff218352fabfbb45305d99676db2",
+    "imports": [
+      "import contextlib",
+      "import io",
+      "import random",
+      "import unittest",
+      "import tx_decode as decoder"
+    ],
+    "io": []
+  },
+  {
+    "file": "line-3/tools/zto-eip1559-decoder/tx_decode.py",
+    "sha256": "c5d852004603011b890a991d6ef988093d1974df00c48549de8f076029146757",
+    "imports": [
+      "import json",
+      "import sys"
+    ],
+    "io": []
+  }
+]

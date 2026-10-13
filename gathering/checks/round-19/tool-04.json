@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_all_three_fields_checked (test_block_field_crosscheck.FieldTests.test_all_three_fields_checked) ... ok\ntest_duplicate_key_and_false_status_rejected (test_block_field_crosscheck.FieldTests.test_duplicate_key_and_false_status_rejected) ... ok\ntest_expected_digests (test_block_field_crosscheck.FieldTests.test_expected_digests) ... ok\ntest_fee_mismatch_that_ancestor_accepts (test_block_field_crosscheck.FieldTests.test_fee_mismatch_that_ancestor_accepts) ... ok\ntest_gas_relationship_rejected (test_block_field_crosscheck.FieldTests.test_gas_relationship_rejected) ... ok\ntest_identity_disagreement_cannot_be_hidden_by_field_agreement (test_block_field_crosscheck.FieldTests.test_identity_disagreement_cannot_be_hidden_by_field_agreement) ... ok\ntest_malformed_quantities_rejected (test_block_field_crosscheck.FieldTests.test_malformed_quantities_rejected) ... ok\ntest_missing_field_rejected (test_block_field_crosscheck.FieldTests.test_missing_field_rejected) ... ok\ntest_real_demo_without_network (test_block_field_crosscheck.FieldTests.test_real_demo_without_network) ... ok\ntest_receipt_byte_binding (test_block_field_crosscheck.FieldTests.test_receipt_byte_binding) ... ok\ntest_source_after_is_checked (test_block_field_crosscheck.FieldTests.test_source_after_is_checked) ... ok\ntest_symlink_refused (test_block_field_crosscheck.FieldTests.test_symlink_refused) ... ok\ntest_uppercase_hex_digits_equivalent (test_block_field_crosscheck.FieldTests.test_uppercase_hex_digits_equivalent) ... ok\ntest_wrong_supply_retains_disagreement (test_block_field_crosscheck.FieldTests.test_wrong_supply_retains_disagreement) ... ok\ntest_zero_and_max_uint256_allowed_for_fee (test_block_field_crosscheck.FieldTests.test_zero_and_max_uint256_allowed_for_fee) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.030s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-1/tools/block-field-crosscheck",
+    "-p",
+    "test_block_field_crosscheck.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 15,
+  "checked_at": "2026-10-13T09:35:56.961344+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

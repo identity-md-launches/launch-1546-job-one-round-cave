@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_byte_boundary (test_strict_rpc.StrictTests.test_byte_boundary) ... ok\ntest_depth_boundary_and_strings (test_strict_rpc.StrictTests.test_depth_boundary_and_strings) ... ok\ntest_duplicates_at_any_depth_including_escaped_keys (test_strict_rpc.StrictTests.test_duplicates_at_any_depth_including_escaped_keys) ... ok\ntest_envelope_error_exclusivity_and_ids (test_strict_rpc.StrictTests.test_envelope_error_exclusivity_and_ids) ... ok\ntest_invalid_encoding_and_syntax (test_strict_rpc.StrictTests.test_invalid_encoding_and_syntax) ... ok\ntest_nonfinite_numbers_in_results_and_unused_fields (test_strict_rpc.StrictTests.test_nonfinite_numbers_in_results_and_unused_fields) ... ok\ntest_retained_real_zto_logs_unchanged (test_strict_rpc.StrictTests.test_retained_real_zto_logs_unchanged) ... ok\ntest_transport_rejects_raw_ambiguous_bytes (test_strict_rpc.StrictTests.test_transport_rejects_raw_ambiguous_bytes) ... ok\ntest_valid_scalars_and_exact_integers (test_strict_rpc.StrictTests.test_valid_scalars_and_exact_integers) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.044s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-4/tools/strict-rpc-json",
+    "-p",
+    "test_strict_rpc.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 9,
+  "checked_at": "2026-10-13T09:36:04.262418+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "{\n  \"assertedLatestNonce\": \"0\",\n  \"assertedPendingNonce\": \"0\",\n  \"calldataSelector\": \"0x18160ddd\",\n  \"chainId\": \"1\",\n  \"destination\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n  \"distanceFromLatest\": \"0\",\n  \"distanceFromPending\": \"0\",\n  \"limitations\": [\n    \"Counts and chain ID are caller assertions, not fetched or authenticated observations.\",\n    \"An unsigned envelope has no recoverable sender. Caller must ensure both counts refer to the intended account on this chain.\",\n    \"Pending counts are provider-local and can change; this does not discover queued transactions or identify a replacement.\",\n    \"No protocol-validity, fee sufficiency, execution, inclusion, finality or signing-safety claim is made.\",\n    \"Fingerprint is SHA-256 of unsigned bytes, not an Ethereum transaction hash.\"\n  ],\n  \"meaning\": \"Proposal nonce equals the asserted next pending-account nonce.\",\n  \"missingNoncesBeforeProposal\": \"0\",\n  \"pendingWindowWidth\": \"0\",\n  \"proposalNonce\": \"0\",\n  \"schema\": \"nonce-context/v1\",\n  \"status\": \"at-pending-frontier\",\n  \"unsignedBytesSha256\": \"106591983d34a682ebe28e41014d8a3157293293f229a4208f1c2079faf30d91\"\n}\n",
+  "stderr": "",
+  "command": [
+    "python3",
+    "-B",
+    "line-3/tools/nonce-context/nonce_context.py",
+    "--demo",
+    "--chain-id",
+    "1",
+    "--latest-nonce",
+    "0",
+    "--pending-nonce",
+    "0"
+  ],
+  "kind": "demo",
+  "tests_run": 0,
+  "checked_at": "2026-10-13T09:36:05.930670+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}

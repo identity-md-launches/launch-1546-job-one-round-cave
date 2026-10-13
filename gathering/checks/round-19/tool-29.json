@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_all_files_reproduce_original (test_subset.Subsets.test_all_files_reproduce_original) ... ok\ntest_bad_selections (test_subset.Subsets.test_bad_selections) ... ok\ntest_cli_output_and_no_overwrite_or_extraction (test_subset.Subsets.test_cli_output_and_no_overwrite_or_extraction) ... ok\ntest_cli_real_no_write (test_subset.Subsets.test_cli_real_no_write) ... ok\ntest_exact_subset_and_own_manifest (test_subset.Subsets.test_exact_subset_and_own_manifest) ... ok\ntest_input_budgets (test_subset.Subsets.test_input_budgets) ... ok\ntest_invalid_input_no_output (test_subset.Subsets.test_invalid_input_no_output) ... ok\ntest_mutable_input_frozen (test_subset.Subsets.test_mutable_input_frozen) ... ok\ntest_order_independent (test_subset.Subsets.test_order_independent) ... ok\ntest_path_confinement (test_subset.Subsets.test_path_confinement) ... ok\ntest_real_archive (test_subset.Subsets.test_real_archive) ... ok\ntest_symlink_output_refused (test_subset.Subsets.test_symlink_output_refused) ... ok\ntest_tampered_omitted_file_refused (test_subset.Subsets.test_tampered_omitted_file_refused) ... ok\ntest_trusted_digest (test_subset.Subsets.test_trusted_digest) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.033s\n\nOK\n",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "line-2/tools/handoff-subset",
+    "-p",
+    "test_subset.py",
+    "-v"
+  ],
+  "kind": "suite",
+  "tests_run": 14,
+  "checked_at": "2026-10-13T09:36:00.781785+00:00",
+  "workspace": "test/scratch/round-19-mirror"
+}
