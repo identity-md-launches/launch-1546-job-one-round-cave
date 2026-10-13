@@ -200,3 +200,16 @@
   inherited wall. Delivered identical `wall-v19.png` and continuing `wall.png`,
   record 38, and its 512-pixel JPEG. The goal and all older records remain
   unchanged.
+
+- Round 39: added `nonce-context`, reusing the unchanged bounded unsigned
+  EIP-1559 decoder and its synthetic real-ZTO totalSupply example. The reader
+  explains a proposal's nonce against caller-asserted chain/latest/pending
+  context, without discovering a sender or querying account state. All 14 new
+  behavioral tests and all 12 inherited decoder tests passed; the documented
+  offline command reported the asserted pending frontier and zero gap.
+- Recovered record 38's exact wall from its public artifact URL with a dedicated
+  User-Agent and verified its SHA-256. Built-in imagegen supplies the new ochre
+  pebble trail, confined to vacant lower-floor rock. Reused inspected
+  standard-library PNG/JPEG helpers without changing ancestor files. No coin,
+  dependency installation, wallet, environment read, key, signing, sending,
+  payment or external post was needed. The goal and older records are retained.

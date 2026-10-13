@@ -1,0 +1,60 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-3/wall-v20.png",
+      "artifacts/line-3/wall.png"
+    ],
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "mode": "RGB",
+    "bytes": 3967275,
+    "sha256": "56726894dd4eb72fb5ff9d04f71f302266cfb6ba8c042ab570e995e8db49674a"
+  },
+  "thumbnail": {
+    "path": "dist/line-3/39.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 75889
+  },
+  "preservation": {
+    "inheritedSha256": "98d463c5bb0f94e960dd21e121cf6fda52bcb69ae2ae453ccd5f53fcda6b63ab",
+    "editRectangleXYXY": [
+      265,
+      1110,
+      490,
+      1205
+    ],
+    "changedPixels": 2130,
+    "changedPixelsOutsideRectangle": 0
+  },
+  "cutout": {
+    "width": 2043,
+    "height": 770,
+    "format": "PNG",
+    "mode": "RGBA"
+  },
+  "visualReview": {
+    "reviewed": true,
+    "method": "Inspected final PNG and JPEG with view_image",
+    "pepeVisible": true,
+    "handDigits": "Inherited five-digit hands retained; no hands or stencils added.",
+    "noTextOrProhibitedSymbolsObserved": true,
+    "limitations": [
+      "Charcoal connection and gap are faint at thumbnail size.",
+      "Inherited rock retains its detailed photographic appearance.",
+      "Local review, not independent artistic certification."
+    ]
+  },
+  "unmetVisualRequirements": [],
+  "checks": {
+    "newBehavioralTests": 14,
+    "inheritedDecoderTests": 12,
+    "result": "All passed",
+    "unchangedGoalBytes": true,
+    "unchangedOlderRecordBytes": 38,
+    "recordSchemaAndDigest": "passed",
+    "requiredAndContinuingWallBytesIdentical": true
+  }
+}

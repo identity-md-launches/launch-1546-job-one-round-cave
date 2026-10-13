@@ -1,0 +1,30 @@
+{
+  "name": "Pepe's Next Step",
+  "image": "https://api.imd.fun/artifacts/56726894dd4eb72fb5ff9d04f71f302266cfb6ba8c042ab570e995e8db49674a",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 39
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "nonce-context"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe follows a pebble trail and notices the gap before the next step."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Offline EIP-1559 transaction decoding"
+    }
+  ]
+}
