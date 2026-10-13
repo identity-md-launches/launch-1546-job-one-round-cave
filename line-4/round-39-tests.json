@@ -1,0 +1,20 @@
+{
+  "suites": [
+    {
+      "command": "python3 -B -m unittest discover -s line-4/tools/transfer-anchor-audit -p 'test_*.py' -v",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "command": "python3 -B -m unittest discover -s line-4/tools/transfer-transaction-groups -p 'test_*.py' -v",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "total_tests": 33,
+  "all_passed": true,
+  "local_checks_only": true,
+  "live_observations": "line-4/tools/transfer-anchor-audit/observations.json"
+}

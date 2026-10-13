@@ -1,0 +1,23 @@
+{
+  "kind": "erc20-transfer-anchor-observations",
+  "schema_version": 1,
+  "chain_id": 1,
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "observed_at": "2026-10-13T09:27:41+00:00",
+  "observations": [
+    {
+      "requested_number": 26177298,
+      "block": {
+        "number": "0x18f6f12",
+        "hash": "0x6e2869a87c8365dff42c2c4b480d52bc5fbd09f326cea479038a7c24ed0557de"
+      }
+    },
+    {
+      "requested_number": 26177309,
+      "block": {
+        "number": "0x18f6f1d",
+        "hash": "0x91e39454315d2b9798ed4feb71d980aba9175a78f75373468d6fab9990f56e15"
+      }
+    }
+  ]
+}

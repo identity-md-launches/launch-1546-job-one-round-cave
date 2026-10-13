@@ -1,0 +1,61 @@
+{
+  "name": "The Revisited Stones",
+  "ancestor_sha256": "a9b1b40fea87390c4ee2f4c537cb5c94ebb4fb2218ac135dceaace94ce4efc53",
+  "generated_motif_sha256": "34a601e152a3df73b63a7e20c4b76feff9d31dc8e6cf858cea297fc068ffd4a1",
+  "wall_sha256": "e1639b0f4d56665ff6c8a82ceea9d3508a84f5ee13c9c9a12a72a2718433cbaa",
+  "wall": {
+    "paths": [
+      "artifacts/line-4/wall.png",
+      "artifacts/line-4/wall-v20.png"
+    ],
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "PNG",
+    "colour": "8-bit RGB",
+    "bytes": 4003241
+  },
+  "addition_rectangle": [
+    64,
+    493,
+    132,
+    68
+  ],
+  "generated_crop": [
+    300,
+    280,
+    950,
+    470
+  ],
+  "changed_pixels": 4041,
+  "changed_pixels_outside_addition": 0,
+  "method": "Installed built-in image generator supplied the motif; Node built-ins removed white in memory and composited pigment only in vacant rock. Generated motif overwritten by final wall.",
+  "thumbnail": {
+    "path": "dist/line-4/39.jpg",
+    "format": "baseline JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 77406
+  },
+  "visual_review": {
+    "reviewed": [
+      "full finished PNG",
+      "512px JPEG"
+    ],
+    "pepe": "Inherited wide mouth and heavy-lidded eyes preserved",
+    "hands": "Both inherited Pepe hands and the inherited hand stencil have five digits each: four fingers and one thumb. No hand added.",
+    "new_mark": "Two linked red/yellow ochre stones on vacant left rock",
+    "ancestral_marks": "Preserved; no changes outside addition rectangle",
+    "text_or_numbers_observed": false,
+    "new_borders_or_watermarks_observed": false,
+    "limitations": [
+      "Inherited rock has photographic texture",
+      "New mark is subdued in the thumbnail",
+      "Local review only, not independent artistic certification"
+    ]
+  },
+  "unmet_visual_requirements": []
+}

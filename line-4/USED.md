@@ -319,3 +319,25 @@
   picture remains in the workspace. No dependency installed, environment or
   secret inspected, key or wallet touched, transaction signed/submitted,
   payment, message post or deployment performed.
+
+## Round 39
+
+- Preserved GOAL.md and all 38 older records. Gathering 18 reported no local
+  Line 4 functional defect. Added a bounded anchor audit for saved transfer
+  windows, reusing transaction groups, strict raw-log validation, bounded
+  no-follow file input and the allowlisted public RPC transport.
+- Reused the retained real three-event ZTO PublicNode capture. At 09:27:41 UTC
+  on 2026-10-13, a fresh direct PublicNode audit matched both known boundary
+  hashes. The final block contains all three events; ten other blocks remain
+  explicitly unchecked. Retained the actual number/hash observations for an
+  offline demo. No chain response was invented.
+- Eighteen new behavioral tests and fifteen inherited group tests passed.
+  Synthetic mismatches and malformed evidence appear only in regression tests.
+- Restored record 38's wall from its public artifact URL and checked its SHA-256.
+  The imagegen skill's built-in tool generated two linked ochre stones. Used
+  returned image bytes, without reading its generated file outside the workspace.
+  Reused the read Node compositor and standard-library thumbnail helper. Only
+  pigment in vacant left rock (64,493,132,68) was added: 4041 changed pixels,
+  zero outside. The generated insert was overwritten by the finished full wall.
+- Installed nothing. No environment, key, wallet or secret read; no transaction
+  signed/submitted, payment, external message or deployment performed.
