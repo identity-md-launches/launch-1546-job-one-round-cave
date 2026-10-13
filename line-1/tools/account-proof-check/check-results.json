@@ -1,0 +1,29 @@
+{
+  "block_hash": "0x9df535d2c4325171af456d416f0f7ca969209b5c10076b4a412fd2c7e2051f5a",
+  "block_number": "26182473",
+  "errors": 0,
+  "evidence_limits": "Account inclusion relative to a provider-supplied, self-consistent Prague header. No trusted mainnet anchor, consensus or finality verification. The account native ETH balance is not a ZTO token balance. No storage slot, bytecode preimage or eth_call result is proved; totalSupply remains an unproved provider observation.",
+  "failures": 0,
+  "offline_demo_command": "python3 -B line-1/tools/account-proof-check/account_proof_check.py demo",
+  "offline_demo_verified": true,
+  "proof_bundle_sha256": "9f748999dfbd926f03fc168549af31d2aca9793319e0a4acae72627ccebfe881",
+  "proof_nodes": 10,
+  "references": [
+    "https://eips.ethereum.org/EIPS/eip-1186",
+    "https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/"
+  ],
+  "reported_provenance": {
+    "proof_captured_at": "2026-10-13T09:05:31Z",
+    "proof_endpoint": "https://ethereum-rpc.publicnode.com",
+    "snapshot_captured_at": "2026-10-13T09:02:41Z",
+    "snapshot_endpoint": "https://ethereum-rpc.publicnode.com"
+  },
+  "review": "A separate worker found no blocking issue, independently checked exhaustive one- and two-byte canonical RLP inputs and the 31/32-byte reference boundary, and reran the original 33-test suite; three additional file/CLI/boundary tests brought this local suite to 36.",
+  "schema": "account-proof-local-checks/1",
+  "snapshot_sha256": "8f4fb80dfd93516ddf53d04f2e9fce6b682df7b330272960d971eeb570d7cf0c",
+  "socket_disabled_demo_test_passed": true,
+  "state_root": "0xc48ced6b7ec310acd70ea93fd7081f1f3dbd6aa06d09a2c52d81de8ef9d51492",
+  "status_scope": "Recorded local checks, not an independent certificate of behavior or chain authenticity.",
+  "test_command": "python3 -B -m unittest discover -s line-1/tools/account-proof-check -p 'test_*.py' -v",
+  "tests_run": 36
+}

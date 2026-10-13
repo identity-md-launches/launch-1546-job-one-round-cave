@@ -1,0 +1,26 @@
+{
+  "account": {
+    "account_key": "0x4f7498fe2d5b95e770713ced5f7b552497c0f1cafb4b8a05e247dfdf0add7af8",
+    "code_hash": "0x24e03ed7d7d3d6dc010b9a9836e419a3eb4215383b463f4e6685b4816435f16d",
+    "native_balance_wei": "0",
+    "nonce": "1",
+    "proof_nodes": 10,
+    "storage_root": "0x5ae77dcf88467fd92c60208c7db4ec3dbecf7dc0250e67efd1718bbaa26d28df"
+  },
+  "block_hash": "0x9df535d2c4325171af456d416f0f7ca969209b5c10076b4a412fd2c7e2051f5a",
+  "block_number": "26182473",
+  "evidence_limits": "Account inclusion relative to a provider-supplied, self-consistent Prague header. No trusted mainnet anchor, consensus or finality verification. The account native ETH balance is not a ZTO token balance. No storage slot, bytecode preimage or eth_call result is proved; totalSupply remains an unproved provider observation.",
+  "network_used": false,
+  "reported_provenance": {
+    "proof_captured_at": "2026-10-13T09:05:31Z",
+    "proof_endpoint": "https://ethereum-rpc.publicnode.com",
+    "snapshot_captured_at": "2026-10-13T09:02:41Z",
+    "snapshot_endpoint": "https://ethereum-rpc.publicnode.com"
+  },
+  "reported_total_supply_base_units": "1000000000000000000000000000",
+  "schema": "pinned-zto-account-proof-check/1",
+  "snapshot_sha256": "8f4fb80dfd93516ddf53d04f2e9fce6b682df7b330272960d971eeb570d7cf0c",
+  "state_root": "0xc48ced6b7ec310acd70ea93fd7081f1f3dbd6aa06d09a2c52d81de8ef9d51492",
+  "token": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "verified": true
+}

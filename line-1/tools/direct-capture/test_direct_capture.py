@@ -61,14 +61,18 @@ class Tests(unittest.TestCase):
 
     def test_redirect_http_handlers_cannot_reissue_request(self):
         request = urllib.request.Request(RELAY, data=b'{}')
-        handler = tool.NoRedirect()
-        parent = unittest.mock.Mock()
-        handler.add_parent(parent)
-        for code in (301, 302, 303, 307, 308):
-            with self.subTest(code=code), self.assertRaises((ValueError, urllib.error.HTTPError)):
-                getattr(handler, 'http_error_' + str(code))(
-                    request, io.BytesIO(), code, 'redirect', {'location': 'https://eth.drpc.org'})
-        parent.open.assert_not_called()
+        opener = urllib.request.OpenerDirector()
+        opener.add_handler(tool.NoRedirect())
+        opener.add_handler(urllib.request.HTTPDefaultErrorHandler())
+        # Exercise urllib's actual error dispatch. Python 3.10 has no dedicated
+        # http_error_308 method and rejects 308 through the default handler.
+        with patch.object(opener, 'open', side_effect=AssertionError('redirect reissued')) as reopened:
+            for code in (301, 302, 303, 307, 308):
+                with self.subTest(code=code), io.BytesIO() as response, \
+                     self.assertRaises((ValueError, urllib.error.HTTPError)):
+                    opener.error('http', request, response, code, 'redirect',
+                                 {'location': 'https://eth.drpc.org'})
+            reopened.assert_not_called()
 
     def test_rejected_endpoint_and_method_before_opener(self):
         requests = [('http://example.com', 'eth_chainId', []),

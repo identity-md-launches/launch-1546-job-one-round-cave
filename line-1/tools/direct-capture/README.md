@@ -40,6 +40,13 @@ All **14 new offline tests** passed, along with **27 relevant ancestor tests** (
 python3 -B line-1/tools/direct-capture/test_direct_capture.py
 ```
 
+The redirect regression now uses urllib's real status-error dispatch for
+301/302/303/307/308 and asserts that no request is reopened. This also covers
+Python 3.10, whose redirect handler has no `http_error_308`: its default error
+handler rejects that status instead. The repaired suite passed all 14 tests
+under Python 3.11 and 3.14, and the offline demo passed. Python 3.10 was not installed
+for a native rerun. No transport behavior changed.
+
 Provider observations and matching before/after block identities do not prove provider honesty, present canonicality or finality. Number-pinned reads can miss a reorg that happens and reverses between anchor checks. This companion improves transport control, not the strength of those evidence claims. Generic single-response results keep the ancestor inspector's limited method-specific validation.
 
 ## Round 28 painting

@@ -1,0 +1,76 @@
+{
+  "schema": "line-1-regression/1",
+  "round": 39,
+  "status": "passed",
+  "execution": "Offline retained-evidence and malformed-input regressions; python3 -B.",
+  "tools_reviewed_before_execution": [
+    "header-hash-check",
+    "snapshot-seal",
+    "pinned-snapshot",
+    "direct-capture",
+    "transport-check",
+    "pinned-transport-check",
+    "rpc-snapshot",
+    "snapshot-check"
+  ],
+  "network_used": false,
+  "unit_tests_passed": 62,
+  "demo_checks_passed": {
+    "transport_check": 25,
+    "pinned_transport_check": 68
+  },
+  "commands": [
+    {
+      "command": "python3 -B -m unittest discover -s line-1/tools/header-hash-check -p 'test_*.py'",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_run": 16
+    },
+    {
+      "command": "python3 -B -m unittest discover -s line-1/tools/snapshot-seal -p 'test_*.py'",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_run": 17
+    },
+    {
+      "command": "python3 -B -m unittest discover -s line-1/tools/pinned-snapshot -p 'test_*.py'",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_run": 11
+    },
+    {
+      "command": "python3 -B -m unittest discover -s line-1/tools/direct-capture -p 'test_*.py'",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_run": 14
+    },
+    {
+      "command": "python3 -B -m unittest discover -s line-1/tools/pinned-transport-check -p 'test_*.py'",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_run": 4,
+      "warnings": [
+        "Python 3.14 ResourceWarning: implicit cleanup of offline fixture response objects during adversarial response tests."
+      ]
+    },
+    {
+      "command": "python3 -B line-1/tools/transport-check/transport_check.py demo",
+      "exit_code": 0,
+      "status": "passed",
+      "checks_passed": 25
+    },
+    {
+      "command": "python3 -B line-1/tools/pinned-transport-check/pinned_transport_check.py demo",
+      "exit_code": 0,
+      "status": "passed",
+      "checks_passed": 68
+    }
+  ],
+  "limitations": [
+    "The 68 pinned transport demo checks also run inside its unittest suite; counts are not disjoint coverage.",
+    "Retained real chain evidence is replayed offline. These runs do not provide fresh public-chain observations or authenticate a provider.",
+    "Header hashes establish self-consistency without a trusted consensus anchor. Snapshot seals provide integrity receipts, not signatures or finality.",
+    "Only the scoped dependencies and repaired direct-capture tests were run; this is not an exhaustive Line 1 or repository-wide regression.",
+    "Temporary test fixtures were confined to test/scratch and are not part of the deliverable."
+  ]
+}

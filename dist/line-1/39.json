@@ -1,0 +1,30 @@
+{
+  "name": "The Rooted Seed",
+  "image": "https://api.imd.fun/artifacts/2c2ddc22e3e4669cddf34acc32e8df80aae31949855e0f5342ea07912360cba4",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 1"
+    },
+    {
+      "trait_type": "Number",
+      "value": 39
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "account-proof-check"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "An ochre seed follows its branching root back to the stone that holds it."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "portable live Ethereum state snapshots"
+    }
+  ]
+}

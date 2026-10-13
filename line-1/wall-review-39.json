@@ -1,0 +1,40 @@
+{
+  "source_record": 38,
+  "record_number": 39,
+  "source_sha256": "a13ad28d5ca803d230d5b6ab77eeaa5b3efaae6e6634c40bcfdb30fca2d0dfc1",
+  "generated_sha256": "ca0ca2e97b341fa9705e13c224e77533f2a4e163f0bec3c69825ea0866afb9cd",
+  "wall_sha256": "2c2ddc22e3e4669cddf34acc32e8df80aae31949855e0f5342ea07912360cba4",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "8-bit RGB PNG",
+  "png_bytes": 3822174,
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "baseline JPEG",
+  "jpeg_bytes": 72481,
+  "addition_rectangle": [
+    860,
+    705,
+    88,
+    151
+  ],
+  "changed_pixels": 1655,
+  "changed_pixels_outside_rectangle": 0,
+  "new_hands_or_stencils": 0,
+  "unmet_visual_requirements": [
+    "Inherited rock looks photographic and was preserved to retain the cave."
+  ],
+  "visual_review": "Inspected finished PNG and JPEG: Pepe retains wide mouth and heavy-lidded eyes, each hand has four fingers and one thumb. No new hands, stencils, writing, numbers, logos, watermarks, frame, real people or prohibited symbols observed. Ancestor art and rock are preserved outside the vacant patch.",
+  "inherited_hand_digit_counts": [
+    5,
+    5
+  ],
+  "visual_limitations": [
+    "Inherited rock looks photographic and is preserved.",
+    "Small root loses detail at thumbnail scale."
+  ]
+}
